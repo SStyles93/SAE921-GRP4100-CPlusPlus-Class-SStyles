@@ -72,7 +72,7 @@ int main()
 				//Ignore anything that isn't a number
 				std::cin.clear();
 				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				std::cout << "That is not a number..." << std::endl;
+				std::cout << "Come on " << playerName << "! That is not a number..." << std::endl;
 				std::cout << "How much do you want to bet ?" << std::endl;
 				std::cin >> bet;
 			}
