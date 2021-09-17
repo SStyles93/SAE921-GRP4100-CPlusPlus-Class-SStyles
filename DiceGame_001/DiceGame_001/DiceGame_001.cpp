@@ -24,17 +24,24 @@ int main()
 	std::cout << "Hello " + playerName + "!" << std::endl;
 	std::cout << "Your current fortune is : " << balance << currency << std::endl;
 	
-	//Ask player if he wants to play, exit if not
-	std::cout << "Do you want to play ? [y/n]" << std::endl;
-	std::cin >> yesOrNo;
-	if (yesOrNo == "n" || yesOrNo == "N")
+	//Ask player if he wants to play. Exit if not
+	do 
+	{
+		std::cout << "Do you want to play ? [y/n]" << std::endl;
+		std::cin >> yesOrNo;
+
+		if (yesOrNo == "n" || yesOrNo == "N")
 		{
 			std::cout << "Ok, see you another time" << std::endl;
 			return EXIT_SUCCESS;
-	}
+		}
+
+	} while(yesOrNo != "y" && yesOrNo != "Y");
+
+	//Set isPlaying to true and start game loop
 	if(yesOrNo == "y" || yesOrNo == "Y")
 	{
-		//Set isPlaying to true and start game loop
+		
 		std::cout << "Lets play then" << std::endl;
 		isPlaying = true;
 	}
@@ -64,6 +71,7 @@ int main()
 			return EXIT_SUCCESS;
 		}
 
+		//TODO: Continue game logic for Wining cases
 
 		/*std::cout << "isPlaying" << std::endl;
 		is playing has to be conditionnaly set*/
