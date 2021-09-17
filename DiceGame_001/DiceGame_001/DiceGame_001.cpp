@@ -8,7 +8,7 @@ int main()
 	int balance = 5;
 	int bet;
 	int dice1, dice2;
-	int minScore = 7;
+	const int minScore = 7;
 	int currentScore = 7;
 	
 	std::string playerName = "Human";
@@ -55,6 +55,7 @@ int main()
 		do
 		{
 			std::cin >> bet;
+			//Re-ask if the bet is higher than balance
 			if (bet > balance) 
 			{
 				std::cout << "You do not have that much money " << playerName << std::endl;
@@ -65,24 +66,26 @@ int main()
 			{
 				balance -= bet;
 			}
-			if (!std::isdigit(bet))
-			{
+			if (!std::cin)
+			{	
+				//Ignore anything that isn't a number
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 				std::cout << "That is not a number..." << std::endl;
-				bet = 0;
 				std::cout << "How much do you want to bet ?" << std::endl;
-				
+				std::cin >> bet;
 			}
 		} while (bet <= 0);
 
+		//Random dice throw
 		srand(time(0));
-
 		dice1 = 2;//(rand() % 6 + 1);
 		dice2 = 5;//(rand() % 6 + 1);
-
+		//Result
 		std::cout << "Your first dice score is : " << dice1 << " Your second dice score is : " << dice2 << std::endl;
 		int totalScore = dice1 + dice2;
 		std::cout << "So...your total dice score is :" << totalScore << std::endl;
-
+		//if player wins
 		if (totalScore >= currentScore)
 		{
 			currentScore = totalScore;
@@ -99,6 +102,7 @@ int main()
 			}
 
 		}
+		//If player loses or has no money left
 		if(totalScore <= minScore && balance <= 0)
 		{
 			std::cout << "Sorry " << playerName << ", you are broke..." << std::endl;
