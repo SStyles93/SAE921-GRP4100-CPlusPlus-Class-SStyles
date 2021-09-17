@@ -10,7 +10,7 @@ int main()
 	int dice1, dice2;
 	int minScore = 7;
 	int currentScore = 7;
-	
+
 	std::string playerName = "Human";
 	std::string currency = " CHF";
 	std::string yesOrNo = "default";
@@ -19,11 +19,9 @@ int main()
 	bool isPlaying = false;
 
 	//Greet the player and ask for his name
-	std::cout << "Hello " + playerName + " What is your name ?" << std::endl;
-	
-	//Get player to type his name in, greet correctly and give him his current fortune;
-	std::cin >> playerName;
-	std::cout << "Hello " + playerName + "!" << std::endl;
+	std::cout << "Hello " << playerName << " What is your name ?" << std::endl;
+	std::getline(std::cin, playerName);
+	std::cout << "Hello " << playerName << "!" << std::endl;
 	std::cout << "Your current fortune is : " << balance << currency << std::endl;
 	std::cout << "If you choose to play, roll 2 dices and try to get a total higher than 7 to double your bet !" << std::endl;
 	
