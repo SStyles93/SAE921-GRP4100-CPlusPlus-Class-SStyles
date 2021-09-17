@@ -11,7 +11,5 @@ DiceGame_001 is a simple dice game where the player has to enter his name, chose
 TODO:
 	-Finish DiceGame_001:
 		-Clear() console when necessary ?
-		-Finish game loop for wining state
-		-Debug when player doesn't enter a number.
 	-Do a DiceGame Variant (2Players, Jackpot, BlackJack)
 	-Do a DragonVariant + Written analysis. 
