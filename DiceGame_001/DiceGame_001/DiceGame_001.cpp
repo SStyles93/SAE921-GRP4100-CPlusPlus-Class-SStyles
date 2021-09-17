@@ -80,8 +80,8 @@ int main()
 
 		//Random dice throw
 		srand(time(0));
-		dice1 = (rand() % 6 + 1);
-		dice2 = (rand() % 6 + 1);
+		dice1 = ((rand() % 6) + 1);
+		dice2 = ((rand() % 6) + 1);
 		//Result
 		std::cout << "Your first dice score is : " << dice1 << " Your second dice score is : " << dice2 << std::endl;
 		int totalScore = dice1 + dice2;
