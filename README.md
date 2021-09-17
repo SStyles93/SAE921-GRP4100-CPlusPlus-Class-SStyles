@@ -2,7 +2,7 @@
 
 This is a game project created for the SAE Game programming courses.
 
-During this project, students have to study basic operations from the <iostream> library like std::cout and std::cin
+During this project, students have to study basic operations from the iostream library like std::cout and std::cin
 and use them with logical operators(+=*/-%) and conditions (if, for, while...do) to accomplish dice games.
 The studied language is C++.
 
