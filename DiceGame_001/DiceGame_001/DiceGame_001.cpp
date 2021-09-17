@@ -8,7 +8,7 @@ int main()
 	int balance = 5;
 	int bet;
 	int dice1, dice2;
-	const int minScore = 7;
+	int minScore = 7;
 	int currentScore = 7;
 	
 	std::string playerName = "Human";
@@ -25,6 +25,7 @@ int main()
 	std::cin >> playerName;
 	std::cout << "Hello " + playerName + "!" << std::endl;
 	std::cout << "Your current fortune is : " << balance << currency << std::endl;
+	std::cout << "If you choose to play, roll 2 dices and try to get a total higher than 7 to double your bet !" << std::endl;
 	
 	//Ask player if he wants to play. Exit if not
 	do 
@@ -58,7 +59,7 @@ int main()
 			//Re-ask if the bet is higher than balance
 			if (bet > balance) 
 			{
-				std::cout << "You do not have that much money " << playerName << std::endl;
+				std::cout << "You do not have that much money " << playerName << "..." << std::endl;
 				bet = 0;
 				std::cout << "How much do you want to bet ?" << std::endl;
 			}
@@ -84,15 +85,40 @@ int main()
 		//Result
 		std::cout << "Your first dice score is : " << dice1 << " Your second dice score is : " << dice2 << std::endl;
 		int totalScore = dice1 + dice2;
-		std::cout << "So...your total dice score is :" << totalScore << std::endl;
+		std::cout << "So...your total dice score is : " << totalScore << std::endl;
+		
+		//If player loses
+		if (totalScore <= minScore)
+		{
+			std::cout << "Sorry " << playerName << " you lost " << bet << " CHF" << std::endl;
+			std::cout << "You now have : " << balance << currency << std::endl;
+			//Exit if no money left
+			if (balance <= 0)
+			{
+				std::cout << "Sorry " << playerName << ", you are broke..." << std::endl;
+				isPlaying = false;
+				break;
+			}
+			//Ask to play again if money left
+			std::cout << "Do you want to play again ? [y/n]" << std::endl;
+			std::cin >> yesOrNo;
+			if (yesOrNo == "n" || yesOrNo == "N")
+			{
+				std::cout << "Ok, see you another time" << std::endl;
+				isPlaying = false;
+			}
+		}
+
 		//if player wins
-		if (totalScore >= currentScore)
+		if (totalScore > currentScore)
 		{
 			currentScore = totalScore;
+			minScore = totalScore;
 			balance += bet*2;
 			bet = 0;
 			std::cout << "Congratulations! You have doubled your bet" << std::endl;
 			std::cout << "You now have : " << balance << currency << std::endl;
+			std::cout << "The new score to beat is now : " << currentScore << std::endl;
 			std::cout << "Do you want to play again ? [y/n]" << std::endl;
 			std::cin >> yesOrNo;
 			if (yesOrNo == "n" || yesOrNo == "N")
@@ -102,13 +128,7 @@ int main()
 			}
 
 		}
-		//If player loses or has no money left
-		if(totalScore <= minScore && balance <= 0)
-		{
-			std::cout << "Sorry " << playerName << ", you are broke..." << std::endl;
-			isPlaying = false;
-		}
-
+		
 	} while (isPlaying == true);
 
 	
