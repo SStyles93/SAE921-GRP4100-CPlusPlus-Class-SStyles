@@ -72,7 +72,7 @@ int main()
 				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 				std::cout << "Come on " << playerName << "! That is not a number..." << std::endl;
 				std::cout << "How much do you want to bet ?" << std::endl;
-				std::cin >> bet;
+				continue;
 			}
 		} while (bet <= 0);
 
