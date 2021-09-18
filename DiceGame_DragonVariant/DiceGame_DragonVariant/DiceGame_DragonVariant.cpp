@@ -3,12 +3,13 @@
 #include <ctime>
 #include <string>
 
+//Classes
 class Player 
 {
 	public:
 		std::string name = "Theobald";
 		std::string description = "The Noble Knight";
-		enum actions{attack, defend, heal};
+		enum actions{ATTACK, DEFEND, HEAL};
 		int health = 100;
 		int attackValue = 5;
 		int healValue = 3;
@@ -26,7 +27,7 @@ class Npc
 		std::string name = "Grimgor";
 		std::string description = "The Black Orc";
 		int health = 100;
-		int attackValue;
+		int attackValue = 2;
 
 		int Attack(int damage)
 		{
@@ -45,11 +46,27 @@ class Npc
 		}
 };
 
+//Methods
+void Clear()
+{
+#if defined _WIN32
+	system("cls");
+#elif defined (__LINUX__) || defined(__gnu_linux__) || defined(__linux__)
+	system("clear");
+#elif defined (__APPLE__)
+	system("clear");
+#endif
+}
+
+//Main program
 int main()
 {
+	//Game Variables
 	Player theo;
 	Npc grim;
 	std::string yesOrNo = "default";
+	bool isPlayerTurn = false;
+
 	//Greet player and ask if he wants to play
 	std::cout << "Welcome to the DragonVariant of the DiceGame" << std::endl;
 	do
@@ -64,12 +81,15 @@ int main()
 		}
 		//Enter game
 		else if (yesOrNo == "y" || yesOrNo == "Y")
-		{
+		{	
+			
+			//Clear();
 			std::cout << "Welcome" << std::endl;
 			std::cout << "Your are " << theo.name <<  " \"" << theo.description << "\"" << std::endl;
 			std::cout << "You currently have " << theo.health << " health points" << std::endl;
 			std::cout << "Your opponent is " << grim.name << " \"" << grim.description << "\"" << std::endl;
 			std::cout << grim.name << " has " << grim.health << " health points" << std::endl;
+			isPlayerTurn = true;
 		}
 		//Keep asking until we get a correct answer
 		else
@@ -78,6 +98,12 @@ int main()
 		}
 	} while (yesOrNo != "y" && yesOrNo != "Y");
 	//Start Game Loop
+	do 
+	{
+		std::cout << "test" << std::endl;
+		isPlayerTurn = false;
+
+	} while (isPlayerTurn);
 
 	return 0;
 }
