@@ -6,8 +6,8 @@
 class Player 
 {
 	public:
-		std::string playerName = "Theobald";
-		std::string playerDescription = "The noble Knight";
+		std::string name = "Theobald";
+		std::string description = "The Noble Knight";
 		enum actions{attack, defend, heal};
 		int health = 100;
 		int attackValue = 5;
@@ -15,7 +15,7 @@ class Player
 
 		int Defend(int damage)
 		{
-			std::cout << playerName << " uses his shield" << std::endl;
+			std::cout << name << " uses his shield" << std::endl;
 			damage *= 70 / 100;
 			return damage;
 		}
@@ -23,8 +23,8 @@ class Player
 class Npc
 {
 	public:
-		std::string npcName = "Grimgor";
-		std::string npcDescription = "The black Orc";
+		std::string name = "Grimgor";
+		std::string description = "The Black Orc";
 		int health = 100;
 		int attackValue;
 
@@ -35,7 +35,7 @@ class Npc
 			int probability = (rand() % 100) < 10;
 			if (probability == 1) 
 			{
-				std::cout << npcName << " summoned the Waagh" << std::endl;
+				std::cout << name << " summoned the Waagh" << std::endl;
 				damage *= 2;
 			}
 			else
@@ -47,6 +47,8 @@ class Npc
 
 int main()
 {
+	Player theo;
+	Npc grim;
 	std::string yesOrNo = "default";
 	//Greet player and ask if he wants to play
 	std::cout << "Welcome to the DragonVariant of the DiceGame" << std::endl;
@@ -64,6 +66,10 @@ int main()
 		else if (yesOrNo == "y" || yesOrNo == "Y")
 		{
 			std::cout << "Welcome" << std::endl;
+			std::cout << "Your are " << theo.name <<  " \"" << theo.description << "\"" << std::endl;
+			std::cout << "You currently have " << theo.health << " health points" << std::endl;
+			std::cout << "Your opponent is " << grim.name << " \"" << grim.description << "\"" << std::endl;
+			std::cout << grim.name << " has " << grim.health << " health points" << std::endl;
 		}
 		//Keep asking until we get a correct answer
 		else
