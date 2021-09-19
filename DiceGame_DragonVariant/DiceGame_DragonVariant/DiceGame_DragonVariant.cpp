@@ -53,6 +53,9 @@ int main()
 	bool isPlayerTurn = false;
 	bool isNpcTurn = false;
 
+	int randomRange = 7; //Wanted range + 1
+	int randomOffset = 2; //Offset of the range
+
 	//Greet player and ask if he wants to play
 	std::cout << "Welcome to the DragonVariant of the DiceGame" << std::endl;
 	std::cout << separationLine << std::endl;
@@ -120,6 +123,7 @@ int main()
 			//Action selection
 			switch (player.action)
 			{
+			//Attack
 			case 1:
 				std::cout << player.name << " attacks " << enemy.name << std::endl;
 				enemy.health -= player.attackValue;
@@ -127,23 +131,35 @@ int main()
 				isPlayerTurn = false;
 				isNpcTurn = true;
 				break;
+			//Defense
 			case 2:
-				std::cout << player.name << " uses his shield" << std::endl;
+				std::cout << player.name << " uses his shield\n" << std::endl;
 				player.isDefending = true;
 				isPlayerTurn = false;
 				isNpcTurn = true;
 				break;
+
+			//Heal
 			case 3:
 				std::cout << player.name << " heals up" << std::endl;
 				player.health += player.healValue;
+				//Heals the correct amount of life
 				if (player.health >= 100) 
 				{
+					//Set player.healValue to actual value
+					player.healValue -= (player.health - 100);
 					player.health = 100;
+				}
+				else
+				{
+					//Set player.healValue to initial value
+					player.healValue = 3;
 				}
 				std::cout << "and recovers " << player.healValue << " health" << std::endl;
 				isPlayerTurn = false;
 				isNpcTurn = true;
 				break;
+			//Reset for incorrect entry 
 			default:
 				std::cin.clear();
 				std::cin.ignore();
@@ -153,11 +169,10 @@ int main()
 
 		} while (isPlayerTurn);
 
-		//NPC turn
+		//Enemy turn
 		do
 		{
 			//Output health and attack
-			//Clear();
 			std::cout << separationLine << std::endl;
 			std::cout << "You have " << player.health << " health points" << std::endl;
 			std::cout << enemy.name << " has " << enemy.health << " health points" << std::endl;
@@ -165,10 +180,8 @@ int main()
 			std::cout << enemy.name << " attacks " << player.name << std::endl;
 			//Random seed
 			srand(time(0));
-			//Get a random attack value (%7 = [0-6] // + 2 = [2-8]
-			enemy.attackValue = ((rand() % 7) + 2);
-			//
-			std::cout << enemy.attackValue << std::endl;
+			//Get a random attack value in the defined range with the defined offset
+			enemy.attackValue = ((rand() % randomRange) + randomOffset);
 			//Return damage with a 10% probability of doubling
 			int probability = (rand() % 100) < 10;
 			if (probability == 1)
