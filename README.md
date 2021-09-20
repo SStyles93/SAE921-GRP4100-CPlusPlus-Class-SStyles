@@ -13,7 +13,6 @@ TODO:
 		-Clear() console ?
 	-Do a DiceGame Variant (2Players, Jackpot, BlackJack).
 	-Do a DragonVariant: (DONE)
-		-Clear() console ?
 	-Written analysis:
-		DiceGame_001 (DONE)
-		DiceGame_DragonVariant
+		-DiceGame_001 (DONE)
+		-DiceGame_DragonVariant (DONE)
