@@ -9,10 +9,11 @@ The studied language is C++.
 DiceGame_001 is a simple dice game where the player has to enter his name, chose to play or exit and then wish for the best!
 
 TODO:
-	-Finish DiceGame_001:
+	-Finish DiceGame_001: (DONE)
 		-Clear() console ?
 	-Do a DiceGame Variant (2Players, Jackpot, BlackJack).
-	-Do a DragonVariant:
-		-Start Game loop
+	-Do a DragonVariant: (DONE)
 		-Clear() console ?
-	-Written analysis.
+	-Written analysis:
+		DiceGame_001 (DONE)
+		DiceGame_DragonVariant

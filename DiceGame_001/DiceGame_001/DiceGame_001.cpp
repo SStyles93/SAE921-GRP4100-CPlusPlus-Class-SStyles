@@ -4,7 +4,7 @@
 #include <string>
 
 //Methods
-void Clear()
+void ConsoleClear()
 {
 #if defined _WIN32
 	system("cls");

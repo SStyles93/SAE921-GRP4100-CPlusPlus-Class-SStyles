@@ -7,7 +7,7 @@
 //Classes
 class Player 
 {
-public:
+	public:
 	std::string name = "Theobald";
 	std::string description = " \"The Noble Knight\" ";
 
@@ -21,7 +21,7 @@ public:
 };
 class Enemy
 {
-public:
+	public:
 	std::string name = "Grimgor";
 	std::string description = " \"The Black Orc\" ";
 
@@ -30,7 +30,7 @@ public:
 };
 
 //Methods
-void Clear()
+void ConsoleClear()
 {
 #if defined _WIN32
 	system("cls");
@@ -79,7 +79,7 @@ int main()
 		//Play
 		else if (yesOrNo == "y" || yesOrNo == "Y")
 		{
-			Clear();
+			ConsoleClear();
 			isGame = true;
 		}
 		//Keep asking until we get a correct answer
@@ -92,17 +92,13 @@ int main()
 	//Start Game Loop
 	do
 	{
-		//Exit conditions
+		//Exit condition : Player's death
 		if (player.health <= 0)
 		{
-			std::cout << enemy.name << enemy.description << " Won!" << std::endl;
+			std::cout << enemy.name << enemy.description << "smashed his opponent and Won!" << std::endl;
 			return EXIT_SUCCESS;
 		}
-		if (enemy.health <= 0)
-		{
-			std::cout << player.name << enemy.description << "Won!" << std::endl;
-			return EXIT_SUCCESS;
-		}
+		
 		//Player turn
 		do
 		{
@@ -118,7 +114,7 @@ int main()
 			std::cout << separationLine << std::endl;
 			std::cout << "Select your action" << std::endl;
 			std::cin >> player.action;
-			Clear();
+			ConsoleClear();
 
 			//Action selection
 			switch (player.action)
@@ -127,11 +123,11 @@ int main()
 			case 1:
 				std::cout << player.name << " attacks " << enemy.name << std::endl;
 				enemy.health -= player.attackValue;
-				std::cout << enemy.name << " looses " << player.attackValue << " health" << std::endl;
+				std::cout << enemy.name << " looses " << player.attackValue << " health points" << std::endl;
 				isPlayerTurn = false;
 				isNpcTurn = true;
 				break;
-			//Defense
+			//Defend
 			case 2:
 				std::cout << player.name << " uses his shield\n" << std::endl;
 				player.isDefending = true;
@@ -141,7 +137,7 @@ int main()
 
 			//Heal
 			case 3:
-				std::cout << player.name << " heals up" << std::endl;
+				std::cout << player.name << " heals himself" << std::endl;
 				player.health += player.healValue;
 				//Heals the correct amount of life
 				if (player.health >= 100) 
@@ -155,7 +151,7 @@ int main()
 					//Set player.healValue to initial value
 					player.healValue = 3;
 				}
-				std::cout << "and recovers " << player.healValue << " health" << std::endl;
+				std::cout << "and recovers " << player.healValue << " health points" << std::endl;
 				isPlayerTurn = false;
 				isNpcTurn = true;
 				break;
@@ -168,6 +164,13 @@ int main()
 			}
 
 		} while (isPlayerTurn);
+		
+		//Exit Condition : Enemy's death
+		if (enemy.health <= 0)
+		{
+			std::cout << player.name << player.description << "survived this epic combat and Won!" << std::endl;
+			return EXIT_SUCCESS;
+		}
 
 		//Enemy turn
 		do
@@ -186,7 +189,7 @@ int main()
 			int probability = (rand() % 100) < 10;
 			if (probability == 1)
 			{
-				std::cout << enemy.name << " summoned the Waagh" << std::endl;
+				std::cout << enemy.name << " goes berzerk and summones the Waagh (damage doubled)" << std::endl;
 				enemy.attackValue *= 2;
 				if (player.isDefending)
 				{
@@ -215,7 +218,7 @@ int main()
 					player.health -= enemy.attackValue;
 				}
 			}
-			std::cout << player.name << " looses " << enemy.attackValue << " health" << std::endl;
+			std::cout << player.name << " looses " << enemy.attackValue << " health points" << std::endl;
 			isNpcTurn = false;
 			isPlayerTurn = true;
 
