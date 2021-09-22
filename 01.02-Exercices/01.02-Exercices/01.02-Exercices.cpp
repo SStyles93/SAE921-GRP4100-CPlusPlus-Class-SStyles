@@ -9,7 +9,7 @@ enum class animals
     HORSE,
     /* Count has to be the last item to get count from
             static_cast<int>(animals::Count);
-    /!\ DOES NOT WORK IF ENUMS VALUES ARE CHAGED /!\ */
+    /!\ DOES NOT WORK IF ENUMS VALUES ARE CHANGED /!\ */
     Count
 };
 
