@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="01.02-Exercices.cpp">
+    <ClCompile Include="Enums.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
