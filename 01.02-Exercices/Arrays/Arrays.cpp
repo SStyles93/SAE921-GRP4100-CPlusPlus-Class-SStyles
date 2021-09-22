@@ -2,6 +2,8 @@
 #include <cstdlib>
 #include <ctime>
 
+#pragma region ArrayEx1
+
 //Array_Ex1 Variables & Functions
 int scores[]{ 84, 92, 76, 81, 56 };
 int BestScores() 
@@ -18,6 +20,8 @@ int BestScores()
 	}
 	return bestScore;
 }
+
+#pragma endregion
 
 int main()
 {	

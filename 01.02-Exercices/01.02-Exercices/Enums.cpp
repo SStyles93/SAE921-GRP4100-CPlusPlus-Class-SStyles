@@ -13,7 +13,6 @@ enum class animals
     Count
 };
 
-
 std::string getAnimalsName(animals animal) 
 {
     switch (animal) 
@@ -58,8 +57,6 @@ std::string getAnimalsNoise(animals animal)
         break;
     }
 }
-
-
 
 int main()
 {
