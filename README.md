@@ -15,11 +15,13 @@ DONE:
 	-Written analysis:
 		-DiceGame_001
 		-DiceGame_DragonVariant
-	Exercice 01.02:
+	-Exercice 01.02:
 		-Enum
 		-Arrays 1,2,3
+		-Strings
+	
 
 TODO:
 	-Do a DiceGame Variant (2Players, Jackpot, BlackJack).
-	-Exercice 01.02:
-		-Strings
+	-Formative:
+		-01.02
