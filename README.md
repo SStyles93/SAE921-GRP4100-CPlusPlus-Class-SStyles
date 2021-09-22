@@ -17,11 +17,9 @@ DONE:
 		-DiceGame_DragonVariant
 	Exercice 01.02:
 		-Enum
-		-Arrays 1,2
+		-Arrays 1,2,3
 
 TODO:
 	-Do a DiceGame Variant (2Players, Jackpot, BlackJack).
 	-Exercice 01.02:
-		-Enum (Done)
-		-Arrays
 		-Strings

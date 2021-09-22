@@ -25,7 +25,7 @@ int main()
 /*
 	//ArrayEx1
     std::cout << BestScores();
-	*/
+*/
 #pragma endregion
 #pragma region Array2
 /*
@@ -66,10 +66,10 @@ int main()
 		std::cout << std::endl;
 		std::cout << V << " is not it the array" << std::endl;
 	}
-	*/
+*/
 #pragma endregion
 #pragma region ArrayEx3
-	/*
+/*
 	//ArrayEx_3
 	const int numRows = 13;
 	const int numCols = 13;
@@ -86,9 +86,8 @@ int main()
 			}
 			std::cout << std::endl;
 		}
-		*/
+*/
 #pragma endregion
-
 
 }
 
