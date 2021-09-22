@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{0dad1d75-8324-4cb9-896e-23ae192fc67e}</ProjectGuid>
+    <ProjectGuid>{c04b0bfc-e53c-4d2e-bbeb-5e75f7a5c613}</ProjectGuid>
     <RootNamespace>DiceGameDragonVariant</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>

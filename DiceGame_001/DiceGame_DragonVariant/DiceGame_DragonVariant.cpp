@@ -5,9 +5,9 @@
 
 
 //Classes
-class Player 
+class Player
 {
-	public:
+public:
 	std::string name = "Theobald";
 	std::string description = " \"The Noble Knight\" ";
 
@@ -17,11 +17,11 @@ class Player
 	int action = 0;
 
 	bool isDefending = false;
-		
+
 };
 class Enemy
 {
-	public:
+public:
 	std::string name = "Grimgor";
 	std::string description = " \"The Black Orc\" ";
 
@@ -98,7 +98,7 @@ int main()
 			std::cout << enemy.name << enemy.description << "smashed his opponent and Won!" << std::endl;
 			return EXIT_SUCCESS;
 		}
-		
+
 		//Player turn
 		do
 		{
@@ -119,7 +119,7 @@ int main()
 			//Action selection
 			switch (player.action)
 			{
-			//Attack
+				//Attack
 			case 1:
 				std::cout << player.name << " attacks " << enemy.name << std::endl;
 				enemy.health -= player.attackValue;
@@ -127,7 +127,7 @@ int main()
 				isPlayerTurn = false;
 				isNpcTurn = true;
 				break;
-			//Defend
+				//Defend
 			case 2:
 				std::cout << player.name << " uses his shield\n" << std::endl;
 				player.isDefending = true;
@@ -135,12 +135,12 @@ int main()
 				isNpcTurn = true;
 				break;
 
-			//Heal
+				//Heal
 			case 3:
 				std::cout << player.name << " heals himself" << std::endl;
 				player.health += player.healValue;
 				//Heals the correct amount of life
-				if (player.health >= 100) 
+				if (player.health >= 100)
 				{
 					//Set player.healValue to actual value
 					player.healValue -= (player.health - 100);
@@ -155,7 +155,7 @@ int main()
 				isPlayerTurn = false;
 				isNpcTurn = true;
 				break;
-			//Reset for incorrect entry 
+				//Reset for incorrect entry 
 			default:
 				std::cin.clear();
 				std::cin.ignore();
@@ -164,7 +164,7 @@ int main()
 			}
 
 		} while (isPlayerTurn);
-		
+
 		//Exit Condition : Enemy's death
 		if (enemy.health <= 0)
 		{
@@ -210,7 +210,7 @@ int main()
 				{
 					enemy.attackValue *= 70;
 					enemy.attackValue /= 100;
-					player.health -= enemy.attackValue; 
+					player.health -= enemy.attackValue;
 					player.isDefending = false;
 				}
 				else
