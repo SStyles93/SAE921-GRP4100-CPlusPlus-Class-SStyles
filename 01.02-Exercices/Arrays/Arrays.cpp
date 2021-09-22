@@ -31,7 +31,7 @@ int main()
     std::cout << BestScores();
 */
 #pragma endregion
-#pragma region Array2
+#pragma region ArrayEx2
 /*
 	//ArrayExercice 2
 
@@ -52,7 +52,7 @@ int main()
 	std::cout << "{";
 	for (size_t i = 0; i < nb; i++)
 	{
-		randomArray[i] = ((rand() % 20) + 1);
+		randomArray[i] = (rand() % 21);
 		std::cout << randomArray[i] << ", ";
 		if (randomArray[i] == V) 
 		{
