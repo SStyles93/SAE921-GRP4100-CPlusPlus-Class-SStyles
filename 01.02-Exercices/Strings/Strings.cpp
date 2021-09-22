@@ -17,11 +17,12 @@ int main()
 
     std::cout << "Welcome " << firstName << " " << name << std::endl;
     std::cout << "Your are : " << age << " years old." << std::endl;
-*/
+
+    */
 #pragma endregion
 
 #pragma region StringEx2
-
+/*
     std::cout << "Entre a text line to count vowels in it" << std::endl;
     std::string text;
     std::getline(std::cin, text);
@@ -37,8 +38,8 @@ int main()
     }
 
     std::cout << vowelCount;
-    
 
+    */
 #pragma endregion
 
 
