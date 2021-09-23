@@ -21,9 +21,10 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{c04b0bfc-e53c-4d2e-bbeb-5e75f7a5c613}</ProjectGuid>
-    <RootNamespace>DiceGameDragonVariant</RootNamespace>
+    <ProjectGuid>{0d389d1e-7544-4e29-a16e-f5cbfd253755}</ProjectGuid>
+    <RootNamespace>Strings</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>01.02 - Exercice - Strings</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -139,7 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DiceGame_DragonVariant.cpp" />
+    <ClCompile Include="Strings.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -127,7 +127,7 @@ void DistributeCards(int nbCards_)
 	srand(time(0));
 	for (int i{ 0 }; i < nbCards_; i++)
 	{
-		std::cout << GetCard(deck[(rand() % 53)].value, deck[(rand() % 53)].suit);
+		std::cout << GetCard(deck[(rand() % 52 )].value, deck[(rand() % 52)].suit);
 	}
 }
 int main()

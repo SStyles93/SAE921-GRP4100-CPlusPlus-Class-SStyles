@@ -21,10 +21,10 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{0d389d1e-7544-4e29-a16e-f5cbfd253755}</ProjectGuid>
-    <RootNamespace>Strings</RootNamespace>
+    <ProjectGuid>{e194a4e5-75ca-4b3f-b906-6d1602db1cfc}</ProjectGuid>
+    <RootNamespace>My0102Exercices</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>01.02 - Strings</ProjectName>
+    <ProjectName>01.02 - Exercice - Enums</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -140,7 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Strings.cpp" />
+    <ClCompile Include="Enums.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

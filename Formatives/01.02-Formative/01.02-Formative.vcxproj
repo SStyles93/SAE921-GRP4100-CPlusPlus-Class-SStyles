@@ -21,10 +21,10 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{01f6661b-a48c-4180-a44b-ab96b4d7398a}</ProjectGuid>
-    <RootNamespace>DiceGame001</RootNamespace>
+    <ProjectGuid>{0a05dcec-d910-4f9f-badc-3d9ab8b3fd6e}</ProjectGuid>
+    <RootNamespace>My0102Formative</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>DiceGame_001</ProjectName>
+    <ProjectName>01.02 - Formative</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -140,7 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DiceGame_001.cpp" />
+    <ClCompile Include="01.02-Formative.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
