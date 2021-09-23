@@ -24,7 +24,7 @@
     <ProjectGuid>{0a05dcec-d910-4f9f-badc-3d9ab8b3fd6e}</ProjectGuid>
     <RootNamespace>My0102Formative</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>01.02 - Formative</ProjectName>
+    <ProjectName>01.02 - Formative - Poker</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

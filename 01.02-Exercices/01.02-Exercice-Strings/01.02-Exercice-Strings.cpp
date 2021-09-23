@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-
+//UNCOMMENT REGIONS TO USE THEM
 int main()
 {
 #pragma region StringEx1
