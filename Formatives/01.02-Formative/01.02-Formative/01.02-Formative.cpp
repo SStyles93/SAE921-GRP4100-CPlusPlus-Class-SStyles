@@ -1,62 +1,141 @@
 #include <iostream>
-#include <array>
+#include <string>
+#include <cstdlib>
+#include <ctime>
 
-enum class Value 
+enum class Value
 {
-	AS, TWO, TREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING,
-	DECKSIZE
+	TWO = 2, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING, ACE,
 };
-enum class Suit 
+enum class Suit
 {
-    HEART,SPADES,CLUBS,DIAMONDS,
-	SUITCOUNT
+    HEARTS,SPADES,CLUBS,DIAMONDS,
 };
 
-const int suitLenght = static_cast<int>(Suit::SUITCOUNT);
-const int valueLenght = static_cast<int>(Value::DECKSIZE);
-int deck2D[suitLenght][valueLenght]{};
-int deck[suitLenght * valueLenght]{}; 
+struct Card 
+{
+	Value value;
+	Suit suit;
+};
+
+Card deck[52];
+
+std::string GetCard(Value value_, Suit suit_)
+{
+	std::string cardValue;
+	std::string cardSuit;
+	//return the intended value / suit in a concataneted string
+	switch (value_)
+	{
+	case Value::ACE:
+		cardValue = "ACE";
+		break;
+	case Value::TWO:
+		cardValue = "TWO";
+		break;
+	case Value::THREE:
+		cardValue = "THREE";
+		break;
+	case Value::FOUR:
+		cardValue = "FOUR";
+		break;
+	case Value::FIVE:
+		cardValue = "FIVE";
+		break;
+	case Value::SIX:
+		cardValue = "SIX";
+		break;
+	case Value::SEVEN:
+		cardValue = "SEVEN";
+		break;
+	case Value::EIGHT:
+		cardValue = "EIGHT";
+		break;
+	case Value::NINE:
+		cardValue = "NINE";
+		break;
+	case Value::TEN:
+		cardValue = "TEN";
+		break;
+	case Value::JACK:
+		cardValue = "JACK";
+		break;
+	case Value::QUEEN:
+		cardValue = "QUEEN";
+		break;
+	case Value::KING:
+		cardValue = "KING";
+		break;
+	default:
+		cardValue = "DEFAULT";
+		break;
+	}
+	switch (suit_)
+	{
+	case Suit::HEARTS:
+		cardSuit = "HEARTS";
+		break;
+	case Suit::SPADES:
+		cardSuit = "SPADES";
+		break;
+	case Suit::CLUBS:
+		cardSuit = "CLUBS";
+		break;
+	case Suit::DIAMONDS:
+		cardSuit = "DIAMONDS";
+		break;
+	default:
+		cardSuit = "DEFAULT";
+		break;
+	}
+
+	return cardValue + " OF " + cardSuit + "\n";
+}
 
 void CreateDeck() 
 {
 	int deckCount = 0;
 
-	for (int suit{ 0 }; suit < suitLenght; ++suit)
+	for (int suit{ 0 }; suit < 4; suit++)
 	{
-		for (int val{ 0 }; val < valueLenght; ++val)
+		for (int val{ 2 }; val < 14; val++)
 		{
+			Card myCard;
+			myCard.value = static_cast<Value>(val);
+			myCard.suit = static_cast<Suit>(suit);
+			deck[deckCount] = myCard;
 			deckCount++;
-			deck2D[suit][val] = deckCount;
-			deck[deckCount] = deck2D[suit][val];
 		}
 	}
 }
 void PrintDeck() 
 {
-	int _deckCount = 0;
-	for (size_t i = 0; i < suitLenght; ++i)
+	int deckCount = 0;
+	for (size_t i = 0; i < 4 ; ++i)
 	{
-		for (size_t j = 0; j < valueLenght; ++j)
+		for (size_t j = 2; j < 14; ++j)
 		{
-			_deckCount++;
 			//std::cout << deck2D[i][j];
-			std::cout << deck[_deckCount];
+			std::cout << GetCard(deck[deckCount].value, deck[deckCount].suit);
+			deckCount++;
 		}
 		std::cout << std::endl;
 	}
 }
-int GetCard(int cardNumber_)
+void DistributeCards(int nbCards_) 
 {
-	//Get the card with %suitLenght or %valueLenght..or smth like that..
-	//and loops ?
-	return deck[cardNumber_];
+	srand(time(0));
+	for (int i{ 0 }; i < nbCards_; i++)
+	{
+		std::cout << GetCard(deck[(rand() % 53)].value, deck[(rand() % 53)].suit);
+	}
 }
-
 int main()
 {
 	CreateDeck();
 	//Print Deck
 	PrintDeck();
-	//Create a function to print out the card
+	//Distribute Cards
+	DistributeCards(5);
 	std::cout << "out the card" << std::endl;
 }
