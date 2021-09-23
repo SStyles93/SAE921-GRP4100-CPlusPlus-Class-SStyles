@@ -84,9 +84,15 @@ int main()
             std::cout << "Out of range...\n" << "Enter a valid index\n";
         }
     } while (characterSelected == false);
-    //TEXT 
-    //Text has to be entered in "". Add "[""]" to replace the string by chosen character's one.
-    std::string text = "[Name][Planet][Title]Ship";
+    /*TEXT
+    Text has to be entered in "". Add "[Name]", "[Title]", "[Planet]" or "[Ship]"
+    to replace the string by chosen character's one.*/
+    std::string text = "Hello [Title], The galactical empire has struc once again.\n";
+    text += "If we don't do anything, a war might be declared!\n";
+    text += "Go back to [Planet] with [Ship]. A galactical embassador will wait for you there!\n";
+    text += "Don't worry if he is not there straight away, he will come sooner or later.\n";
+    text += "Stay safe [Name], your journey has just started. ";
+    text += "Due to the situation,\nyou migth encounter problems on the road to [Planet]\n";
     std::cout << ReplaceMessage(text, idx) << std::endl;
     
     return EXIT_SUCCESS;
