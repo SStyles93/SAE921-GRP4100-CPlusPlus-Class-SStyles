@@ -1,10 +1,6 @@
 #include <iostream>
 #include <string>
-/*
-Sarah Shepard, Born on planet Earth at 24 / 08 / 2087. Captain of the crusader ship The Explorer
-Phil spector, Born on planet Mars at 26 / 08 / 2038. Pilot of the H - Hunter n° 3434 - DFG
-Whifghy, the metamorph.Created  in Sector SD / F67.Child of the bioship Sxiot
-*/
+
 const int characterCount = 3;
 struct Character
 {
@@ -13,7 +9,15 @@ struct Character
     std::string title[characterCount] = { "Captain", "Pilot", "Child" };
     std::string ship[characterCount] = { "the crusader ship", "the H - Hunter n° 3434 - DFG", "the bioship Sxiot" };
 };
-
+std::string ReplaceMessage
+(std::string text_, std::string name_, std::string planet_, std::string title_, std::string ship_)
+{
+    text_.replace(text_.find("[Name]"), name_.length(), name_);
+    text_.replace(text_.find("[Title]"), title_.length(), title_);
+    text_.replace(text_.find("[Planet]"), planet_.length(), planet_);
+    text_.replace(text_.find("[Ship]"), ship_.length(), ship_);
+    return text_;
+}
 int main()
 {
     Character character;
@@ -37,7 +41,7 @@ int main()
             std::cout << "Created in " << character.planet[i] << ". \n";
             break;
         default:
-            std::cout << "NO VALUE *" << std::endl;
+            std::cout << "NO VALUE !" << std::endl;
             break;
         }
         std::cout << character.title[i] << " of " << character.ship[i];
@@ -51,7 +55,7 @@ int main()
         {
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "That is not a number...\n" << "Enter a valid index" << std::endl;
+            std::cout << "That is not a number...\n" << "Enter a valid index\n";
         }
         //Correct case
         else if (idx < characterCount && idx >= 0)
@@ -63,9 +67,12 @@ int main()
         {
             std::cin.clear();
             std::cin.ignore();
-            std::cout << "Out of range...\n" << "Enter a valid index" << std::endl;
+            std::cout << "Out of range...\n" << "Enter a valid index\n";
         }
     } while (characterSelected == false);
 
+    std::cout << "Great, you are now [Name], [Title] of [Ship] \n";
+    std::cout << ReplaceMessage("Great, you are now [Name], [Title] of [Ship]", 
+        character.name[idx], character.planet[idx], character.title[idx], character.ship[idx]);
     return EXIT_SUCCESS;
 }
