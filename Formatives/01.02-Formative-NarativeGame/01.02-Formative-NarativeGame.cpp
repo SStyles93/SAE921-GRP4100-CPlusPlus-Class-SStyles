@@ -103,18 +103,16 @@ int main()
     ConsoleClear();
     /*TEXT
     Text has to be entered in "". Add "[Name]", "[Title]", "[Planet]" or "[Ship]"
-    to replace the string by chosen character's one.*/
+    to replace the strings by chosen character's ones.*/
     std::string text = "Hello [Title], The galactical empire has struc once again.\n";
     text += "If we don't do anything, a war might be declared!\n\n";
 
     text += "Go back to [Planet] with [Ship]. A galactical embassador will wait for you there!\n";
     text += "Don't worry if he is not there straight away, he will come sooner or later.\n\n";
-    
     text += "Stay safe [Name], your journey has just started. \n";
     std::cout << ReplaceMessage(text, idx);
-    //empty text (too long to pass in memory)
+    //empty text (too long to pass in one string)
     text = "";
-    //continue
     text += "Due to the situation, you migth encounter problems on the road to [Planet]!\n";
     std::cout << ReplaceMessage(text, idx);
     text = "";
