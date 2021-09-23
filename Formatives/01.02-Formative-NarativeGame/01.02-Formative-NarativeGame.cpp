@@ -9,6 +9,8 @@ struct Character
     std::string title[characterCount] = { "Captain", "Pilot", "Child" };
     std::string ship[characterCount] = { "the crusader ship", "the H - Hunter n° 3434 - DFG", "the bioship Sxiot" };
 };
+#pragma region Methods
+
 
 std::string Replace(std::string str, const std::string from, const std::string to)
 {
@@ -32,6 +34,20 @@ std::string ReplaceMessage
 
     return text_;
 }
+
+void ConsoleClear()
+{
+#if defined _WIN32
+    system("cls");
+#elif defined (__LINUX__) || defined(__gnu_linux__) || defined(__linux__)
+    system("clear");
+#elif defined (__APPLE__)
+    system("clear");
+#endif
+}
+
+#pragma endregion
+
 int main()
 {   //Variables
     Character character;
@@ -84,16 +100,31 @@ int main()
             std::cout << "Out of range...\n" << "Enter a valid index\n";
         }
     } while (characterSelected == false);
+    ConsoleClear();
     /*TEXT
     Text has to be entered in "". Add "[Name]", "[Title]", "[Planet]" or "[Ship]"
     to replace the string by chosen character's one.*/
     std::string text = "Hello [Title], The galactical empire has struc once again.\n";
-    text += "If we don't do anything, a war might be declared!\n";
+    text += "If we don't do anything, a war might be declared!\n\n";
+
     text += "Go back to [Planet] with [Ship]. A galactical embassador will wait for you there!\n";
-    text += "Don't worry if he is not there straight away, he will come sooner or later.\n";
-    text += "Stay safe [Name], your journey has just started. ";
-    text += "Due to the situation,\nyou migth encounter problems on the road to [Planet]\n";
-    std::cout << ReplaceMessage(text, idx) << std::endl;
+    text += "Don't worry if he is not there straight away, he will come sooner or later.\n\n";
     
+    text += "Stay safe [Name], your journey has just started. \n";
+    std::cout << ReplaceMessage(text, idx);
+    //empty text (too long to pass in memory)
+    text = "";
+    //continue
+    text += "Due to the situation, you migth encounter problems on the road to [Planet]!\n";
+    std::cout << ReplaceMessage(text, idx);
+    text = "";
+    text += "End of transmission...\n\n";
+    text += "That was the final transmission from [Planet]. ";
+    text += "Up until this point [Name] never felt\nas unsecure than at that moment.\n";
+    std::cout << ReplaceMessage(text, idx);
+    text = "";
+    text += "[Name] was stuck in the middle of space on [Ship] and would probably\n";
+    text += "have to traval for a very long time befor even seeing [Planet] \n";
+    std::cout << ReplaceMessage(text, idx);
     return EXIT_SUCCESS;
 }
