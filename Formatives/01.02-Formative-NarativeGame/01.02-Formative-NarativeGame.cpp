@@ -122,7 +122,7 @@ int main()
     std::cout << ReplaceMessage(text, idx);
     text = "";
     text += "[Name] was stuck in the middle of space on [Ship] and would probably\n";
-    text += "have to traval for a very long time befor even seeing [Planet] \n";
+    text += "have to travel for a very long time befor even seeing [Planet] \n";
     std::cout << ReplaceMessage(text, idx);
     return EXIT_SUCCESS;
 }
