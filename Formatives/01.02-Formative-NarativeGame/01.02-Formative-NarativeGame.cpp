@@ -9,21 +9,35 @@ struct Character
     std::string title[characterCount] = { "Captain", "Pilot", "Child" };
     std::string ship[characterCount] = { "the crusader ship", "the H - Hunter n° 3434 - DFG", "the bioship Sxiot" };
 };
-std::string ReplaceMessage
-(std::string text_, std::string name_, std::string planet_, std::string title_, std::string ship_)
+
+std::string Replace(std::string str, const std::string from, const std::string to)
 {
-    text_.replace(text_.find("[Name]"), name_.length(), name_);
-    text_.replace(text_.find("[Title]"), title_.length(), title_);
-    text_.replace(text_.find("[Planet]"), planet_.length(), planet_);
-    text_.replace(text_.find("[Ship]"), ship_.length(), ship_);
+    size_t start_pos = str.find(from);
+    if (start_pos == std::string::npos)
+        return str;
+    str.replace(start_pos, from.length(), to);
+    return str;
+    
+}
+
+std::string ReplaceMessage
+(std::string text_, int characterIndex_)
+{
+    Character character;
+ 
+    text_ = Replace(text_, "[Name]", character.name[characterIndex_]);
+    text_ = Replace(text_, "[Planet]", character.planet[characterIndex_]);
+    text_ = Replace(text_, "[Title]", character.title[characterIndex_]);
+    text_ = Replace(text_, "[Ship]", character.ship[characterIndex_]);
+
     return text_;
 }
 int main()
-{
+{   //Variables
     Character character;
     int idx;
     bool characterSelected = false;
-
+    //Welcoming and selection
     std::cout << "Welcome to the narative game" << std::endl;
     std::cout << "Select your character: " << std::endl;
     for (int i = 0; i < characterCount; i++)
@@ -70,9 +84,10 @@ int main()
             std::cout << "Out of range...\n" << "Enter a valid index\n";
         }
     } while (characterSelected == false);
-
-    std::cout << "Great, you are now [Name], [Title] of [Ship] \n";
-    std::cout << ReplaceMessage("Great, you are now [Name], [Title] of [Ship]", 
-        character.name[idx], character.planet[idx], character.title[idx], character.ship[idx]);
+    //TEXT 
+    //Text has to be entered in "". Add "[""]" to replace the string by chosen character's one.
+    std::string text = "[Name][Planet][Title]Ship";
+    std::cout << ReplaceMessage(text, idx) << std::endl;
+    
     return EXIT_SUCCESS;
 }
