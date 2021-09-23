@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DiceGame_001.cpp">
+    <ClCompile Include="DiceGame-Base.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

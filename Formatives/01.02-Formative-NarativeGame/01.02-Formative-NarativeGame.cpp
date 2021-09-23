@@ -17,8 +17,8 @@ struct Character
 int main()
 {
     Character character;
-
     int idx;
+    bool characterSelected = false;
 
     std::cout << "Welcome to the narative game" << std::endl;
     std::cout << "Select your character: " << std::endl;
@@ -43,14 +43,29 @@ int main()
         std::cout << character.title[i] << " of " << character.ship[i];
         std::cout << std::endl;
     }
-    do 
-    {
-        std::cin.clear();
-        std::cin.ignore();
-
+    do{
+        //Player Input
         std::cin >> idx;
+        //Not a number
+        if (!std::cin)
+        {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "That is not a number...\n" << "Enter a valid index" << std::endl;
+        }
+        //Correct case
+        else if (idx < characterCount && idx >= 0)
+        {
+            characterSelected = true;
+        }
+        //Incorrect cases
+        else
+        {
+            std::cin.clear();
+            std::cin.ignore();
+            std::cout << "Out of range...\n" << "Enter a valid index" << std::endl;
+        }
+    } while (characterSelected == false);
 
-    } while (idx >= characterCount && idx < 0);
-
-    
+    return EXIT_SUCCESS;
 }

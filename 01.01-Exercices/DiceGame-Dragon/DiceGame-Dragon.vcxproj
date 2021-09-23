@@ -24,7 +24,7 @@
     <ProjectGuid>{c04b0bfc-e53c-4d2e-bbeb-5e75f7a5c613}</ProjectGuid>
     <RootNamespace>DiceGameDragonVariant</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>01.01 - Exercice - DiceGame_002</ProjectName>
+    <ProjectName>01.01 - Exercice - DiceGame-Dragon</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -140,7 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DiceGame_DragonVariant.cpp" />
+    <ClCompile Include="DiceGame-Dragon.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
