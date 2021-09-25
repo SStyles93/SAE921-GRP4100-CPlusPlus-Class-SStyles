@@ -23,18 +23,18 @@ struct Character
 };
 struct Decision
 {
-    std::string action[2] = { "stay", "leave" };
+    std::string action1[2] = { "stay", "leave" };
     std::string adj1[2] = { "best", "worst" };
     std::string adj2[2] = { "Thanks to", "Because of" };
     std::string reaction[2] = {
         "found a source of power an could finally go back to [Planet]",
         "had no more fuel and was stuck in space alone" };
-    std::string end[2] = { "stop an imminent war", "probably died there" };
+    std::string end[2] = { "stop an imminent war", "would probably die there" };
 };
 #pragma endregion
 #pragma region Methods
 
-int AskPlayerForIndex(int idx_, int maxValue_, bool bool_) 
+int AskPlayerForInput(int idx_, int maxValue_, bool isSelected_) 
 {
     do {
         //Player Input
@@ -49,7 +49,7 @@ int AskPlayerForIndex(int idx_, int maxValue_, bool bool_)
         //Correct case
         else if (idx_ < maxValue_ && idx_ >= 0)
         {
-            bool_ = true;
+            isSelected_ = true;
         }
         //Incorrect cases
         else
@@ -58,7 +58,7 @@ int AskPlayerForIndex(int idx_, int maxValue_, bool bool_)
             std::cin.ignore();
             std::cout << "Out of range...\n" << "Enter a valid index\n";
         }
-    } while (bool_ == false);
+    } while (isSelected_ == false);
     return idx_;
 }
 
@@ -89,7 +89,7 @@ std::string ReplaceMessage
         text_ = Replace(text_, "[Ship]", character.ship[characterIndex_]);
         text_ = Replace(text_, "[Ally]", character.ally[characterIndex_]);
         //Decision Replace()
-        text_ = Replace(text_, "[Action]", decision.action[pathIndex_]);
+        text_ = Replace(text_, "[Action1]", decision.action1[pathIndex_]);
         text_ = Replace(text_, "[Adj1]", decision.adj1[pathIndex_]);
         text_ = Replace(text_, "[Adj2]", decision.adj2[pathIndex_]);
         text_ = Replace(text_, "[Reaction]", decision.reaction[pathIndex_]);
@@ -121,7 +121,7 @@ int main()
     //Variables
     //character selection
     int characterIdx = 0;
-    bool characterSelected = false;
+    bool characterIsSelected = false;
     //path selection
     int pathIdx = 0;
     bool pathIsSelected = false;
@@ -150,7 +150,7 @@ int main()
         std::cout << character.title[i] << " of " << character.ship[i];
         std::cout << std::endl;
     }
-    characterIdx = AskPlayerForIndex(characterIdx, characterCount, characterSelected);
+    characterIdx = AskPlayerForInput(characterIdx, characterCount, characterIsSelected);
     ConsoleClear();
 
     /*TEXT
@@ -158,6 +158,7 @@ int main()
     to replace the strings by chosen character's ones.
     text = ""; is to empty text if it is too long to fit 
     */
+    //§1
     std::string text = "Hello [Title], The galactical empire has struc once again.\n";
     text += "If we don't do something about it, a war might be declared!\n";
     text += "Go back to [Planet] as quickly as possible. The [Ally] will wait for you there!\n";
@@ -165,7 +166,8 @@ int main()
     text += "Due to the situation, you migth encounter problems on the road to [Planet]!\n";
     text += "End of transmission...\n\n";
     std::cout << ReplaceMessage(text, characterIdx, pathIdx);
-
+    
+    //§2
     text = "";
     text += "That was the final transmission from [Planet]. ";
     text += "[Name] the [Title] had to find a way home as soon as possible.\n";
@@ -174,9 +176,10 @@ int main()
     std::cout << ReplaceMessage(text, characterIdx, pathIdx);
     
     text = "";
-    text += "But after all that was just a minor problem... \n\n";
+    text += "But after all that was just a minor problem. \n\n";
+    //§3
     text += "[Name] the [Title] of [Ship] was in the middle of an unknown territory with \n";
-    text += "not much fuel and no way to reach out for help...\n";
+    text += "not much fuel and no way to reach out for help.\n";
     std::cout << ReplaceMessage(text, characterIdx, pathIdx);
     
     text = "";
@@ -184,18 +187,19 @@ int main()
     text += "0)searching for a source of power in the middle of nowhere.\nor";
     text += "\n1) Taking the risk of leaving to join the [Ally] on [Planet].\n";
     std::cout << ReplaceMessage(text, characterIdx, pathIdx);
-    pathIdx = AskPlayerForIndex(pathIdx, 2, pathIsSelected);
+    pathIdx = AskPlayerForInput(pathIdx, 2, pathIsSelected);
+    ConsoleClear();
 
+    //§4
     text = "";
-    text += "After a moment of reflexion [Name] decided to [Action] without being influenced by anything.\n";
-    text += "The fact that [Name] decided to [Action] was probably the [Adj] idea.\n";
-    text += "[Adj2] that decision the [Title] [Reaction] and [End].\n";
+    text += "After a moment of reflexion the [Title] decided to [Action1] without being influenced by anything.\n";
+    text += "The fact that [Name] decided to [Action1] was probably the [Adj1] idea.\n";
+    text += "[Adj2] that decision the [Title], [Name], [Reaction]\nand [End].\n";
     std::cout << ReplaceMessage(text, characterIdx, pathIdx);
-    if (pathIdx == 1) 
-    {
+    //path 0 == success | path 1 == fail
+    if (pathIdx == 1)
         return EXIT_SUCCESS;
-    }
-
+    
     text = "";
 
 
