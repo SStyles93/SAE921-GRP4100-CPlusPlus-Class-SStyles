@@ -111,11 +111,11 @@ void CreateDeck()
 void PrintDeck() 
 {
 	int deckCount = 0;
-	for (size_t i = 0; i < 4 ; ++i)
+	for (size_t suit = 0; suit < 4 ; ++suit)
 	{
-		for (size_t j = 2; j < 14; ++j)
+		for (size_t val = 2; val < 14; ++val)
 		{
-			//std::cout << deck2D[i][j];
+			//std::cout << deck2D[suit][val];
 			std::cout << GetCard(deck[deckCount].value, deck[deckCount].suit);
 			deckCount++;
 		}
@@ -137,5 +137,5 @@ int main()
 	PrintDeck();
 	//Distribute Cards
 	DistributeCards(5);
-	std::cout << "out the card" << std::endl;
+	
 }

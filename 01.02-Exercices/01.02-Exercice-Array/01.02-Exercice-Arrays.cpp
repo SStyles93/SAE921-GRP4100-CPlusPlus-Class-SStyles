@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 
-#pragma region ArrayEx1
+#pragma region ArrayEx1:find the best score
 
 //Array_Ex1 Variables & Functions
 int scores[]{ 84, 92, 76, 81, 56 };
@@ -25,13 +25,13 @@ int BestScores()
 
 int main()
 {	
-#pragma region ArrayEx1
+#pragma region ArrayEx1:find the best score
 /*
 	//ArrayEx1
     std::cout << BestScores();
 */
 #pragma endregion
-#pragma region ArrayEx2
+#pragma region ArrayEx2:find the value
 /*
 	//ArrayExercice 2
 
@@ -72,7 +72,7 @@ int main()
 	}
 */
 #pragma endregion
-#pragma region ArrayEx3
+#pragma region ArrayEx3:display multiplication table
 /*
 	//ArrayEx_3
 	const int numRows = 13;

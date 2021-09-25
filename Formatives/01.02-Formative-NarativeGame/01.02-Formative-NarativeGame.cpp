@@ -8,6 +8,7 @@
 int doubleChecker = 0;
 //Number of characters in the story
 const int characterCount = 3;
+const int actionCount = 2;
 
 
 #pragma endregion
@@ -23,10 +24,10 @@ struct Character
 };
 struct Decision
 {
-    std::string action1[2] = { "stay", "leave" };
-    std::string adj1[2] = { "best", "worst" };
-    std::string adj2[2] = { "Thanks to", "Because of" };
-    std::string reaction[2] = {
+    std::string action1[actionCount] = { "stay", "leave" };
+    std::string adj1[actionCount] = { "best", "worst" };
+    std::string adj2[actionCount] = { "Thanks to", "Because of" };
+    std::string reaction[actionCount] = {
         "found a source of power an could finally go back to [Planet]",
         "had no more fuel and was stuck in space alone" };
     std::string end[2] = { "stop an imminent war", "would probably die there" };
