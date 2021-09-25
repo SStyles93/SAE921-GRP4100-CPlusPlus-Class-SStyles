@@ -25,6 +25,8 @@ DONE:
 		-01.02-Narative
 			
 TODO:
+
+
 	Exercices:
 		-Do a DiceGame Variant (2Players, Jackpot, BlackJack).
 	Formative:
