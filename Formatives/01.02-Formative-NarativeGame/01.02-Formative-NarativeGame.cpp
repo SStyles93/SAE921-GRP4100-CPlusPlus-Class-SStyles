@@ -1,10 +1,16 @@
 #include <iostream>
 #include <string>
 
-//Variables
-const int characterCount = 3;
-int doubleChecker = 0;
+#pragma region Variables
 
+//doubleChecker is used in ReplaceMessage() 
+//to check mutiple times the same "[element]"
+int doubleChecker = 0;
+//Number of characters in the story
+const int characterCount = 3;
+
+
+#pragma endregion
 #pragma region Structs
 
 struct Character
@@ -15,8 +21,46 @@ struct Character
     std::string ship[characterCount] = { "the crusader ship", "the H - Hunter n° 3434 - DFG", "the bioship Sxiot" };
     std::string ally[characterCount] = { "General", "Commander", "Mother" };
 };
+struct Decision
+{
+    std::string action[2] = { "stay", "leave" };
+    std::string adj1[2] = { "best", "worst" };
+    std::string adj2[2] = { "Thanks to", "Because of" };
+    std::string reaction[2] = {
+        "found a source of power an could finally go back to [Planet]",
+        "had no more fuel and was stuck in space alone" };
+    std::string end[2] = { "stop an imminent war", "probably died there" };
+};
 #pragma endregion
 #pragma region Methods
+
+int AskPlayerForIndex(int idx_, int maxValue_, bool bool_) 
+{
+    do {
+        //Player Input
+        std::cin >> idx_;
+        //Not a number
+        if (!std::cin)
+        {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "That is not a number...\n" << "Enter a valid index\n";
+        }
+        //Correct case
+        else if (idx_ < maxValue_ && idx_ >= 0)
+        {
+            bool_ = true;
+        }
+        //Incorrect cases
+        else
+        {
+            std::cin.clear();
+            std::cin.ignore();
+            std::cout << "Out of range...\n" << "Enter a valid index\n";
+        }
+    } while (bool_ == false);
+    return idx_;
+}
 
 std::string Replace(std::string str, const std::string from, const std::string to)
 {
@@ -31,21 +75,28 @@ std::string Replace(std::string str, const std::string from, const std::string t
 }
 
 std::string ReplaceMessage
-(std::string text_, int characterIndex_)
-{   
+(std::string text_, int characterIndex_,int pathIndex_)
+{
     Character character;
+    Decision decision;
     //Loop until all elements of text_ are found and replaced
     do
     {
+        //Character Replace()
         text_ = Replace(text_, "[Name]", character.name[characterIndex_]);
         text_ = Replace(text_, "[Planet]", character.planet[characterIndex_]);
         text_ = Replace(text_, "[Title]", character.title[characterIndex_]);
         text_ = Replace(text_, "[Ship]", character.ship[characterIndex_]);
         text_ = Replace(text_, "[Ally]", character.ally[characterIndex_]);
+        //Decision Replace()
+        text_ = Replace(text_, "[Action]", decision.action[pathIndex_]);
+        text_ = Replace(text_, "[Adj1]", decision.adj1[pathIndex_]);
+        text_ = Replace(text_, "[Adj2]", decision.adj2[pathIndex_]);
+        text_ = Replace(text_, "[Reaction]", decision.reaction[pathIndex_]);
+        text_ = Replace(text_, "[End]", decision.end[pathIndex_]);
 
         doubleChecker--;
     } while (doubleChecker > 0);
-    
     //return text after replacement
     return text_;
 }
@@ -64,10 +115,17 @@ void ConsoleClear()
 #pragma endregion
 
 int main()
-{   //Variables
+{   
+    //Struct
     Character character;
-    int idx;
+    //Variables
+    //character selection
+    int characterIdx = 0;
     bool characterSelected = false;
+    //path selection
+    int pathIdx = 0;
+    bool pathIsSelected = false;
+
     //Welcoming and selection
     std::cout << "Welcome to the narative game" << std::endl;
     std::cout << "Select your character: " << std::endl;
@@ -92,30 +150,9 @@ int main()
         std::cout << character.title[i] << " of " << character.ship[i];
         std::cout << std::endl;
     }
-    do{
-        //Player Input
-        std::cin >> idx;
-        //Not a number
-        if (!std::cin)
-        {
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "That is not a number...\n" << "Enter a valid index\n";
-        }
-        //Correct case
-        else if (idx < characterCount && idx >= 0)
-        {
-            characterSelected = true;
-        }
-        //Incorrect cases
-        else
-        {
-            std::cin.clear();
-            std::cin.ignore();
-            std::cout << "Out of range...\n" << "Enter a valid index\n";
-        }
-    } while (characterSelected == false);
+    characterIdx = AskPlayerForIndex(characterIdx, characterCount, characterSelected);
     ConsoleClear();
+
     /*TEXT
     Text has to be entered in "". Add "[Name]", "[Title]", "[Planet]" or "[Ship]"
     to replace the strings by chosen character's ones.
@@ -127,26 +164,40 @@ int main()
     text += "Be as quick as possible. Our entire species is at risk!\n";
     text += "Due to the situation, you migth encounter problems on the road to [Planet]!\n";
     text += "End of transmission...\n\n";
-    std::cout << ReplaceMessage(text, idx);
+    std::cout << ReplaceMessage(text, characterIdx, pathIdx);
 
     text = "";
     text += "That was the final transmission from [Planet]. ";
     text += "[Name] the [Title] had to find a way home as soon as possible.\n";
     text += "[Name] was stuck somewhere in space on [Ship] and would probably\n";
     text += "have to travel for a very long time before even seeing [Planet]. \n";
-    std::cout << ReplaceMessage(text, idx);
+    std::cout << ReplaceMessage(text, characterIdx, pathIdx);
     
     text = "";
     text += "But after all that was just a minor problem... \n\n";
     text += "[Name] the [Title] of [Ship] was in the middle of an unknown territory with \n";
     text += "not much fuel and no way to reach out for help...\n";
-    std::cout << ReplaceMessage(text, idx);
+    std::cout << ReplaceMessage(text, characterIdx, pathIdx);
     
     text = "";
     text += "At that moment, [Name] had only two options...\n\n";
-    text += "a)searching for a source of power in the middle of nowhere.\nor";
-    text += "\nb) Taking the risk of leaving to join the [Ally] on [Planet]";
-    std::cout << ReplaceMessage(text, idx);
-    
+    text += "0)searching for a source of power in the middle of nowhere.\nor";
+    text += "\n1) Taking the risk of leaving to join the [Ally] on [Planet].\n";
+    std::cout << ReplaceMessage(text, characterIdx, pathIdx);
+    pathIdx = AskPlayerForIndex(pathIdx, 2, pathIsSelected);
+
+    text = "";
+    text += "After a moment of reflexion [Name] decided to [Action] without being influenced by anything.\n";
+    text += "The fact that [Name] decided to [Action] was probably the [Adj] idea.\n";
+    text += "[Adj2] that decision the [Title] [Reaction] and [End].\n";
+    std::cout << ReplaceMessage(text, characterIdx, pathIdx);
+    if (pathIdx == 1) 
+    {
+        return EXIT_SUCCESS;
+    }
+
+    text = "";
+
+
     return EXIT_SUCCESS;
 }
