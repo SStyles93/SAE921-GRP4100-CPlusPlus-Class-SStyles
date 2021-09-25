@@ -1,12 +1,19 @@
 # SAE921-GRP4100-CPlusPlus-Class-SStyles
 
-This is a game project created for the SAE Game programming courses.
+This is a project created for the SAE Game programming courses.
 
-During this project, students have to study basic operations from the iostream library like std::cout and std::cin
-and use them with logical operators(+=*/-%) and conditions (if, for, while...do) to accomplish dice games.
 The studied language is C++.
 
-DiceGame_001 is a simple dice game where the player has to enter his name, chose to play or exit and then wish for the best!
+During this project, students have to study basic operations from the iostream library like std::cout and std::cin
+and use them with logical operators(+=*/-%) and conditions (if, for, while...do) to accomplish games.
+
+Ex.01
+DiceGame-Base is a simple dice game where the player has to enter his name, chose to play or exit and then wish for the best!
+DiceGame-Dragon is a RPG where you have to select your actions and do your best to kill the enemy.
+
+Ex.02
+Training with Enums, Arrays, Strings
+
 
 DONE:	
 	Exercices:
