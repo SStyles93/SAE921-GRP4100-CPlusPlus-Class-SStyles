@@ -30,7 +30,7 @@ public:
 };
 
 //Methods
-void ConsoleClear()
+void ClearConsole()
 {
 #if defined _WIN32
 	system("cls");
@@ -79,7 +79,7 @@ int main()
 		//Play
 		else if (yesOrNo == "y" || yesOrNo == "Y")
 		{
-			ConsoleClear();
+			ClearConsole();
 			isGame = true;
 		}
 		//Keep asking until we get a correct answer
@@ -114,7 +114,7 @@ int main()
 			std::cout << separationLine << std::endl;
 			std::cout << "Select your action" << std::endl;
 			std::cin >> player.action;
-			ConsoleClear();
+			ClearConsole();
 
 			//Action selection
 			switch (player.action)

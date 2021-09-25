@@ -20,17 +20,41 @@ struct Character
     std::string planet[characterCount] = { "Earth", "Mars", "the Sector SD / F67" };
     std::string title[characterCount] = { "Captain", "Pilot", "Child" };
     std::string ship[characterCount] = { "the crusader ship", "the H - Hunter n° 3434 - DFG", "the bioship Sxiot" };
+    std::string race[characterCount] = { "Human", "Martian", "Bioxis" };
     std::string ally[characterCount] = { "General", "Commander", "Mother" };
+    std::string nemesis[characterCount] = { "Martian", "Bioxis", "Human" };
 };
 struct Decision
 {
     std::string action1[actionCount] = { "stay", "leave" };
     std::string adj1[actionCount] = { "best", "worst" };
     std::string adj2[actionCount] = { "Thanks to", "Because of" };
-    std::string reaction[actionCount] = {
+    std::string reaction1[actionCount] =
+    {
         "found a source of power ",
-        "had no more fuel and was stuck in space alone" };
-    std::string end[2] = { "could finally start moving to [Planet]", "would probably die there" };
+        "had no more fuel and was stuck in space alone" 
+    };
+    std::string finality1[actionCount] = 
+    { 
+        "could finally start moving to [Planet]", 
+        "would probably die there" 
+    };
+
+    std::string action2[actionCount] = 
+    {
+        "fire first and destroy the [Nemesis]'s ship",
+        "move slowly, stay calm and hope the [Nemesis]s don't fire" 
+    };
+    std::string adj3[actionCount] =
+    {
+        "safe", "under fire"
+    };
+    std::string finality2[actionCount] =
+    {
+        "could go back to [Planet] and stop a galactical disaster",
+        "ended their life there and were not able to save the galaxy"
+    };
+
 };
 #pragma endregion
 #pragma region Methods
@@ -88,13 +112,18 @@ std::string ReplaceMessage
         text_ = Replace(text_, "[Planet]", character.planet[characterIndex_]);
         text_ = Replace(text_, "[Title]", character.title[characterIndex_]);
         text_ = Replace(text_, "[Ship]", character.ship[characterIndex_]);
+        text_ = Replace(text_, "[Race]", character.race[characterIndex_]);
         text_ = Replace(text_, "[Ally]", character.ally[characterIndex_]);
+        text_ = Replace(text_, "[Nemesis]", character.nemesis[characterIndex_]);
         //Decision Replace()
         text_ = Replace(text_, "[Action1]", decision.action1[pathIndex_]);
         text_ = Replace(text_, "[Adj1]", decision.adj1[pathIndex_]);
         text_ = Replace(text_, "[Adj2]", decision.adj2[pathIndex_]);
-        text_ = Replace(text_, "[Reaction]", decision.reaction[pathIndex_]);
-        text_ = Replace(text_, "[End]", decision.end[pathIndex_]);
+        text_ = Replace(text_, "[Reaction1]", decision.reaction1[pathIndex_]);
+        text_ = Replace(text_, "[Finality1]", decision.finality1[pathIndex_]);
+        text_ = Replace(text_, "[Action2]", decision.action2[pathIndex_]);
+        text_ = Replace(text_, "[Adj3]", decision.adj3[pathIndex_]);
+        text_ = Replace(text_, "[Finality2]", decision.finality2[pathIndex_]);
 
         doubleChecker--;
     } while (doubleChecker > 0);
@@ -102,7 +131,7 @@ std::string ReplaceMessage
     return text_;
 }
 
-void ConsoleClear()
+void ClearConsole()
 {
 #if defined _WIN32
     system("cls");
@@ -152,7 +181,7 @@ int main()
         std::cout << std::endl;
     }
     characterIdx = AskPlayerForInput(characterIdx, characterCount, characterIsSelected);
-    ConsoleClear();
+    ClearConsole();
 
     /*
     ___________________________________________________________________________
@@ -165,7 +194,7 @@ int main()
     ___________________________________________________________________________
     */
     //§1
-    std::string text = "Hello [Title], The galactical empire has struc once again.\n";
+    std::string text = "Hello [Title], The 9th Galactical Empire has struc once again.\n";
     text += "If we don't do something about it, a war might be declared!\n";
     text += "Go back to [Planet] as quickly as possible. The [Ally] will wait for you there!\n";
     text += "Be as quick as possible. Our entire species is at risk!\n";
@@ -190,9 +219,9 @@ int main()
     
     text = "";
     text += "At that moment, [Name] had only two options...\n\n";
-    text += "0) Searching for a source of power in the middle of nowhere.\n";
+    text += "[0] Searching for a source of power in the middle of nowhere.\n";
     text += "                           or                                  ";
-    text += "\n1) Taking the risk of leaving to join the [Ally] on [Planet].\n";
+    text += "\n[1] Taking the risk of leaving to join the [Ally] on [Planet].\n";
     std::cout << ReplaceMessage(text, characterIdx, pathIdx);
 
     /*
@@ -202,20 +231,71 @@ int main()
     ___________________________________________________________________________
     */
     pathIdx = AskPlayerForInput(pathIdx, 2, pathIsSelected);
-    ConsoleClear();
+    ClearConsole();
 
     //§4
     text = "";
     text += "After a moment of reflexion, without being influenced by anything, the [Title] decided to [Action1].\n";
     text += "The fact that [Name] decided to [Action1] was probably the [Adj1] idea.\n";
-    text += "[Adj2] that decision the [Title], [Name], [Reaction]\nand [End].\n";
+    text += "[Adj2] that decision the [Title], [Name], [Reaction1]\nand [Finality1].\n";
     std::cout << ReplaceMessage(text, characterIdx, pathIdx);
     //path 0 == success | path 1 == fail
     if (pathIdx == 1)
         return EXIT_SUCCESS;
-    
+    //§5
+    text = "\n";
+    text += "On the way to [Planet] the [Title] encoutered a [Nemesis] fleet.\n";
+    text += "At first sight that may not seem like a problem but the [Nemesis]s\n";
+    text += "where actually the Archenemies of the [Race] race.\n";
+    std::cout << ReplaceMessage(text, characterIdx, pathIdx);
+    //§6
+    text = "\n";
+    text += "For a [Race], the [Nemesis]s are considered as the worst creation in the entire universe.\n";
+    text += "Since the 3rd Galactical Empire consitution was signed a big part of the [Race]s where\n";
+    text += "dispossessed of their land by the [Nemesis]s due to equality reasons...\n";
+    std::cout << ReplaceMessage(text, characterIdx, pathIdx);
+    //§7
+    text = "\n";
+    text += "For that reason, encoutering a [Nemesis] ship was always a very tense moment.\n";
+    text += "No one could be blamed if by error, some [Nemesis] ship, opened fire on\n";
+    text += "a poor [Race] ship lost somewhere in the middle of nowhere.\n";
+    std::cout << ReplaceMessage(text, characterIdx, pathIdx);
+    //§8
     text = "";
+    text += "The [Title] of [Ship] had to decide very quickly what to do.\n\n";
+    text += "[0] Order to fire first and be sure to not die.\n";
+    text += "                      or                       \n";
+    text += "[1] Move slowly, stay calm and hope [Nemesis] will not fire either\n";
+    std::cout << ReplaceMessage(text, characterIdx, pathIdx);
+    /*
+   ___________________________________________________________________________
 
+                                  Path selection 2
+   ___________________________________________________________________________
+   */
+    pathIdx = AskPlayerForInput(pathIdx, 2, pathIsSelected);
+    ClearConsole();
+
+    text = "";
+    text += "[Name] the [Title] of [Ship] ordered to\n";
+    text += "[Action2].\n";
+    std::cout << ReplaceMessage(text, characterIdx, pathIdx);
+    //re-use the decision adj and finality by inverting pathIdx
+    switch (pathIdx)
+    {
+    case 0:
+        pathIdx = 1;
+        break;
+    case 1:
+        pathIdx = 0;
+        break;
+    default:
+        break;
+    }
+    text = "";
+    text += "[Adj2] that decision, [Name] and [Ship] where [Adj3] and\n";
+    text += "[Finality2].\n";
+    std::cout << ReplaceMessage(text, characterIdx, pathIdx);
     /*
     ___________________________________________________________________________
 
