@@ -127,7 +127,7 @@ int main()
     int pathIdx = 0;
     bool pathIsSelected = false;
 
-    //Welcoming and selection
+    //Welcoming and character selection
     std::cout << "Welcome to the narative game" << std::endl;
     std::cout << "Select your character: " << std::endl;
     for (int i = 0; i < characterCount; i++)
@@ -154,10 +154,15 @@ int main()
     characterIdx = AskPlayerForInput(characterIdx, characterCount, characterIsSelected);
     ConsoleClear();
 
-    /*TEXT
+    /*
+    ___________________________________________________________________________
+                                        
+                                        TEXT
+    ___________________________________________________________________________
     Text has to be entered in "". Add "[Name]", "[Title]", "[Planet]" or "[Ship]"
     to replace the strings by chosen character's ones.
     text = ""; is to empty text if it is too long to fit 
+    ___________________________________________________________________________
     */
     //§1
     std::string text = "Hello [Title], The galactical empire has struc once again.\n";
@@ -188,6 +193,13 @@ int main()
     text += "0)searching for a source of power in the middle of nowhere.\nor";
     text += "\n1) Taking the risk of leaving to join the [Ally] on [Planet].\n";
     std::cout << ReplaceMessage(text, characterIdx, pathIdx);
+
+    /*
+    ___________________________________________________________________________
+    
+                                   Path selection
+    ___________________________________________________________________________
+    */
     pathIdx = AskPlayerForInput(pathIdx, 2, pathIsSelected);
     ConsoleClear();
 
@@ -203,6 +215,11 @@ int main()
     
     text = "";
 
+    /*
+    ___________________________________________________________________________
 
+                                        END
+    ___________________________________________________________________________
+    */
     return EXIT_SUCCESS;
 }
