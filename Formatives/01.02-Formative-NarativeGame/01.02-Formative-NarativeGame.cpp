@@ -280,18 +280,10 @@ int main()
     text += "[Name] the [Title] of [Ship] ordered to\n";
     text += "[Action2].\n";
     std::cout << ReplaceMessage(text, characterIdx, pathIdx);
-    //re-use the decision adj and finality by inverting pathIdx
-    switch (pathIdx)
-    {
-    case 0:
-        pathIdx = 1;
-        break;
-    case 1:
-        pathIdx = 0;
-        break;
-    default:
-        break;
-    }
+    
+    //re-use the Decision [adj2] inverting pathIdx
+    pathIdx = !pathIdx;
+     
     text = "";
     text += "[Adj2] that decision, [Name] and [Ship] where [Adj3] and\n";
     text += "[Finality2].\n";
