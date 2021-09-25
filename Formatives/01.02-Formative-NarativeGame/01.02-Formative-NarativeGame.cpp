@@ -28,9 +28,9 @@ struct Decision
     std::string adj1[actionCount] = { "best", "worst" };
     std::string adj2[actionCount] = { "Thanks to", "Because of" };
     std::string reaction[actionCount] = {
-        "found a source of power an could finally go back to [Planet]",
+        "found a source of power ",
         "had no more fuel and was stuck in space alone" };
-    std::string end[2] = { "stop an imminent war", "would probably die there" };
+    std::string end[2] = { "could finally start moving to [Planet]", "would probably die there" };
 };
 #pragma endregion
 #pragma region Methods
@@ -190,7 +190,8 @@ int main()
     
     text = "";
     text += "At that moment, [Name] had only two options...\n\n";
-    text += "0)searching for a source of power in the middle of nowhere.\nor";
+    text += "0) Searching for a source of power in the middle of nowhere.\n";
+    text += "                           or                                  ";
     text += "\n1) Taking the risk of leaving to join the [Ally] on [Planet].\n";
     std::cout << ReplaceMessage(text, characterIdx, pathIdx);
 
@@ -205,7 +206,7 @@ int main()
 
     //§4
     text = "";
-    text += "After a moment of reflexion the [Title] decided to [Action1] without being influenced by anything.\n";
+    text += "After a moment of reflexion, without being influenced by anything, the [Title] decided to [Action1].\n";
     text += "The fact that [Name] decided to [Action1] was probably the [Adj1] idea.\n";
     text += "[Adj2] that decision the [Title], [Name], [Reaction]\nand [End].\n";
     std::cout << ReplaceMessage(text, characterIdx, pathIdx);
