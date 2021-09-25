@@ -1,37 +1,52 @@
 #include <iostream>
 #include <string>
 
+//Variables
 const int characterCount = 3;
+int doubleChecker = 0;
+
+#pragma region Structs
+
 struct Character
 {
     std::string name[characterCount] = { "Sarah Shepard", "Phil Spector", "Whifghy", };
     std::string planet[characterCount] = { "Earth", "Mars", "Sector SD / F67" };
     std::string title[characterCount] = { "Captain", "Pilot", "Child" };
     std::string ship[characterCount] = { "the crusader ship", "the H - Hunter n° 3434 - DFG", "the bioship Sxiot" };
+    std::string ally[characterCount] = { "General", "Commander", "Mother" };
 };
+#pragma endregion
 #pragma region Methods
-
 
 std::string Replace(std::string str, const std::string from, const std::string to)
 {
+    //find(the wanted keyword) if no keyword found return 
     size_t start_pos = str.find(from);
     if (start_pos == std::string::npos)
-        return str;
-    str.replace(start_pos, from.length(), to);
     return str;
-    
+    //if found replace with (to)
+    str.replace(start_pos, from.length(), to);
+    doubleChecker++;
+    return str;
 }
 
 std::string ReplaceMessage
 (std::string text_, int characterIndex_)
-{
+{   
     Character character;
- 
-    text_ = Replace(text_, "[Name]", character.name[characterIndex_]);
-    text_ = Replace(text_, "[Planet]", character.planet[characterIndex_]);
-    text_ = Replace(text_, "[Title]", character.title[characterIndex_]);
-    text_ = Replace(text_, "[Ship]", character.ship[characterIndex_]);
+    //Loop until all elements of text_ are found and replaced
+    do
+    {
+        text_ = Replace(text_, "[Name]", character.name[characterIndex_]);
+        text_ = Replace(text_, "[Planet]", character.planet[characterIndex_]);
+        text_ = Replace(text_, "[Title]", character.title[characterIndex_]);
+        text_ = Replace(text_, "[Ship]", character.ship[characterIndex_]);
+        text_ = Replace(text_, "[Ally]", character.ally[characterIndex_]);
 
+        doubleChecker--;
+    } while (doubleChecker > 0);
+    
+    //return text after replacement
     return text_;
 }
 
@@ -103,26 +118,28 @@ int main()
     ConsoleClear();
     /*TEXT
     Text has to be entered in "". Add "[Name]", "[Title]", "[Planet]" or "[Ship]"
-    to replace the strings by chosen character's ones.*/
+    to replace the strings by chosen character's ones.
+    text = ""; is to empty text if it is too long to fit 
+    */
     std::string text = "Hello [Title], The galactical empire has struc once again.\n";
-    text += "If we don't do anything, a war might be declared!\n\n";
-
-    text += "Go back to [Planet] with [Ship]. A galactical embassador will wait for you there!\n";
-    text += "Don't worry if he is not there straight away, he will come sooner or later.\n\n";
-    text += "Stay safe [Name], your journey has just started. \n";
-    std::cout << ReplaceMessage(text, idx);
-    //empty text (too long to pass in one string)
-    text = "";
+    text += "If we don't do something about it, a war might be declared!\n";
+    text += "Go back to [Planet] as quickly as possible. The [Ally] will wait for you there!\n";
+    text += "Be as quick as possible. Our entire species is at risk!\n";
     text += "Due to the situation, you migth encounter problems on the road to [Planet]!\n";
-    std::cout << ReplaceMessage(text, idx);
-    text = "";
     text += "End of transmission...\n\n";
-    text += "That was the final transmission from [Planet]. ";
-    text += "Up until this point [Name] never felt\nas unsecure than at that moment.\n";
+    std::cout << ReplaceMessage(text, idx);
+
+    text = "";
+    text += "That was the final transmission from [Planet].";
+    text += "[Name] the [Title] had to find a way home as soon as possible.\n";
+    text += "[Name] was stuck somewhere in space on [Ship] and would probably\n";
+    text += "have to travel for a very long time before even seeing [Planet]. \n";
     std::cout << ReplaceMessage(text, idx);
     text = "";
-    text += "[Name] was stuck in the middle of space on [Ship] and would probably\n";
-    text += "have to travel for a very long time befor even seeing [Planet] \n";
+    text += "But after all that was just the begining of the [Title]'s problems.\n";
+    text += "[Name] the [Title] of [Ship] was in the middle of a Civil war  \n";
     std::cout << ReplaceMessage(text, idx);
+    
+
     return EXIT_SUCCESS;
 }
