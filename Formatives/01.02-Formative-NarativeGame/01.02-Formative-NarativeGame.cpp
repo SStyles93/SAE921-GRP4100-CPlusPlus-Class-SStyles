@@ -10,7 +10,7 @@ int doubleChecker = 0;
 struct Character
 {
     std::string name[characterCount] = { "Sarah Shepard", "Phil Spector", "Whifghy", };
-    std::string planet[characterCount] = { "Earth", "Mars", "Sector SD / F67" };
+    std::string planet[characterCount] = { "Earth", "Mars", "the Sector SD / F67" };
     std::string title[characterCount] = { "Captain", "Pilot", "Child" };
     std::string ship[characterCount] = { "the crusader ship", "the H - Hunter n° 3434 - DFG", "the bioship Sxiot" };
     std::string ally[characterCount] = { "General", "Commander", "Mother" };
@@ -130,16 +130,23 @@ int main()
     std::cout << ReplaceMessage(text, idx);
 
     text = "";
-    text += "That was the final transmission from [Planet].";
+    text += "That was the final transmission from [Planet]. ";
     text += "[Name] the [Title] had to find a way home as soon as possible.\n";
     text += "[Name] was stuck somewhere in space on [Ship] and would probably\n";
     text += "have to travel for a very long time before even seeing [Planet]. \n";
     std::cout << ReplaceMessage(text, idx);
+    
     text = "";
-    text += "But after all that was just the begining of the [Title]'s problems.\n";
-    text += "[Name] the [Title] of [Ship] was in the middle of a Civil war  \n";
+    text += "But after all that was just a minor problem... \n\n";
+    text += "[Name] the [Title] of [Ship] was in the middle of an unknown territory with \n";
+    text += "not much fuel and no way to reach out for help...\n";
     std::cout << ReplaceMessage(text, idx);
     
-
+    text = "";
+    text += "At that moment, [Name] had only two options...\n\n";
+    text += "a)searching for a source of power in the middle of nowhere.\nor";
+    text += "\nb) Taking the risk of leaving to join the [Ally] on [Planet]";
+    std::cout << ReplaceMessage(text, idx);
+    
     return EXIT_SUCCESS;
 }
