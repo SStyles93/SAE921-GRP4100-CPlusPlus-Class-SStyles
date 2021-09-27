@@ -89,18 +89,19 @@ int AskPlayerForInput(int idx_, int maxValue_, bool isSelected_)
 
 std::string Replace(std::string str, const std::string from, const std::string to)
 {
-    //find(the wanted keyword) if no keyword found return 
+    //string.find(KeyWord) gives position of it.
     size_t start_pos = str.find(from);
+    //if the position is equal to last position return.
     if (start_pos == std::string::npos)
     return str;
-    //if found replace with (to)
+    //otherwise, (KeyWord) was found and is replaced
+    //replace(position of KeyWord, lenght of (KeyWord), word to replace with)
     str.replace(start_pos, from.length(), to);
     doubleChecker++;
     return str;
 }
 
-std::string ReplaceMessage
-(std::string text_, int characterIndex_,int pathIndex_)
+std::string ReplaceMessage(std::string text_, int characterIndex_,int pathIndex_)
 {
     Character character;
     Decision decision;
@@ -265,7 +266,7 @@ int main()
     text += "The [Title] of [Ship] had to decide very quickly what to do.\n\n";
     text += "[0] Order to fire first and be sure to not die.\n";
     text += "                      or                       \n";
-    text += "[1] Move slowly, stay calm and hope [Nemesis] will not fire either\n";
+    text += "[1] Move slowly, stay calm and hope [Nemesis]s will not fire either\n";
     std::cout << ReplaceMessage(text, characterIdx, pathIdx);
     /*
    ___________________________________________________________________________
