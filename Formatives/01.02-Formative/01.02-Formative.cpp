@@ -12,7 +12,7 @@ enum class Suit
     HEARTS,SPADES,CLUBS,DIAMONDS,
 };
 
-struct Card 
+struct Card
 {
 	Value value;
 	Suit suit;
