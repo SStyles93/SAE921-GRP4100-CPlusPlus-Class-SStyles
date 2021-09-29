@@ -18,8 +18,9 @@ DONE:
 			-DiceGame_001
 			-DiceGame_DragonVariant
 		-01.02-Enum
-		-01.02-Arrays 1,2,3
-		-01.02-Strings 1,2
+		-01.02-Arrays [1,2,3]
+		-01.02-Strings [1,2]
+		-02-Exercice [1.1, 1.2, 1.3]
 	Formative:
 		-01.02-Poker
 		-01.02-Narative
@@ -29,6 +30,7 @@ TODO:
 
 	Exercices:
 		-01.01-DiceGame Variant (2Players, Jackpot, BlackJack).
-		-01.02 Strings[3-16]
+		-01.02-Strings[3-16]
+		-02-Exercice[2.1, 2.2]
 	Formative:
 		
