@@ -19,7 +19,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01.02-Formative-NarativeGam
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02-Exercice", "02-Exercice\02-Exercice\02-Exercice.vcxproj", "{A98888D2-28B1-4BDF-8E53-FA77430C30C3}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03 - Exercice - PokerII", "03 - Exercice - PokerII\03 - Exercice - PokerII.vcxproj", "{AEE3D3BA-7BE7-41DD-AEEB-B7DBCF701D7C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03.01 - Exercice - PokerII", "03 - Exercice - PokerII\03 - Exercice - PokerII.vcxproj", "{AEE3D3BA-7BE7-41DD-AEEB-B7DBCF701D7C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03.02 - Exercice - Vector", "03.02 - Exercice - Vector\03.02 - Exercice - Vector.vcxproj", "{6D5B6898-553B-4902-A8E3-CBE750D0C59C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -101,6 +103,14 @@ Global
 		{AEE3D3BA-7BE7-41DD-AEEB-B7DBCF701D7C}.Release|x64.Build.0 = Release|x64
 		{AEE3D3BA-7BE7-41DD-AEEB-B7DBCF701D7C}.Release|x86.ActiveCfg = Release|Win32
 		{AEE3D3BA-7BE7-41DD-AEEB-B7DBCF701D7C}.Release|x86.Build.0 = Release|Win32
+		{6D5B6898-553B-4902-A8E3-CBE750D0C59C}.Debug|x64.ActiveCfg = Debug|x64
+		{6D5B6898-553B-4902-A8E3-CBE750D0C59C}.Debug|x64.Build.0 = Debug|x64
+		{6D5B6898-553B-4902-A8E3-CBE750D0C59C}.Debug|x86.ActiveCfg = Debug|Win32
+		{6D5B6898-553B-4902-A8E3-CBE750D0C59C}.Debug|x86.Build.0 = Debug|Win32
+		{6D5B6898-553B-4902-A8E3-CBE750D0C59C}.Release|x64.ActiveCfg = Release|x64
+		{6D5B6898-553B-4902-A8E3-CBE750D0C59C}.Release|x64.Build.0 = Release|x64
+		{6D5B6898-553B-4902-A8E3-CBE750D0C59C}.Release|x86.ActiveCfg = Release|Win32
+		{6D5B6898-553B-4902-A8E3-CBE750D0C59C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

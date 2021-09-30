@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{aee3d3ba-7be7-41dd-aeeb-b7dbcf701d7c}</ProjectGuid>
-    <RootNamespace>My03ExercicePokerII</RootNamespace>
+    <ProjectGuid>{6d5b6898-553b-4902-a8e3-cbe750d0c59c}</ProjectGuid>
+    <RootNamespace>My0302ExerciceVector</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>03.01 - Exercice - PokerII</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -140,11 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="03 - Exercice - PokerII.cpp" />
-    <ClCompile Include="Card.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Card.h" />
+    <ClCompile Include="03.02 - Exercice - Vector.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
