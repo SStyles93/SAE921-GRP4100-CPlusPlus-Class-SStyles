@@ -21,6 +21,8 @@ DONE:
 		-01.02-Arrays [1,2,3]
 		-01.02-Strings [1,2]
 		-02-Exercice [1.1, 1.2, 1.3]
+		-03-Exercice [2.1, 3.1, 3.2]
+		
 	Formative:
 		-01.02-Poker
 		-01.02-Narative
@@ -32,5 +34,8 @@ TODO:
 		-01.01-DiceGame Variant (2Players, Jackpot, BlackJack).
 		-01.02-Strings[3-16]
 		-02-Exercice[2.1, 2.2]
+		-03-Exercice [3.3]
 	Formative:
-		
+		-03-Formative-PokerII
+		-03-Formative-RouletteRusse		
+		-03-Formative-Map [4.1]

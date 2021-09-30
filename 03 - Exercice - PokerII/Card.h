@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <vector>
 
 enum class Value
 {
@@ -22,6 +23,6 @@ class Card
 		void PrintDeck();
 };
 
-Card deck[52];
+std::vector<Card> deck(52);
 
 

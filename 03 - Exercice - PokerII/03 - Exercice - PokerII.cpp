@@ -1,6 +1,6 @@
 #include "Card.h"
 
-Card deck[52];
+std::vector<Card> deck(52);
 Card card;
 
 void DistributeCards(int nbCards_)
