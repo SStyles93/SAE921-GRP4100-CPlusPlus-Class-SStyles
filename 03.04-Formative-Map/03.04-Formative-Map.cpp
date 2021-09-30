@@ -41,6 +41,10 @@ void PrintMap()
 		std::cout << mapIt->first << " : " << mapIt->second << std::endl;
 	}
 }
+void FindUser() 
+{
+
+}
 int main()
 {
 	AskForKeyValuePair();
