@@ -36,38 +36,44 @@ void AskForKeyValuePair()
 }
 void PrintMap() 
 {
+	int mapIndex = 0;
+	std::cout << "The map contains : \n";
 	for (auto mapIt = map.begin(); mapIt != map.end(); mapIt++)
 	{
-		std::cout << mapIt->first << " : " << mapIt->second << std::endl;
+
+		std::cout << "[" << mapIndex << "] " << mapIt->first << " : " << mapIt->second << std::endl;
+		mapIndex++;
 	}
 }
-void FindNumberInMap(std::string name_)
+void FindNumberInMap()
 {
+	std::string name = "Default";
+	std::cout << "Who's number are you looking for ? \n";
+	std::cin.ignore();
+	std::getline(std::cin, name);
 	std::map<std::string, std::string>::iterator it;
 	for (it = map.begin(); it != map.end(); it++)
 	{
-		if (it->first == name_) 
+		if (it->first == name) 
 		{
 			std::cout << it->second << std::endl;
-		}
-		else
-		{
-			std::cout << "Nothing was found" << std::endl;
 		}
 	}
 }
 
 int main()
 {
+	char keepGoing = 'y';
 	
 	AskForKeyValuePair();
 	PrintMap();
-
-	std::string name = "Default";
-	std::cout << "Who's number are you looking for ? \n";
-	std::cin.ignore();
-	std::getline(std::cin, name);
 	
-
-	FindNumberInMap(name);
+	do
+	{
+		FindNumberInMap();
+		
+		std::cout << "Do you want to find an other number ? [Y] / [N] \n";
+		std::cin >> keepGoing;
+	
+	} while (keepGoing != 'n' && keepGoing != 'N');
 }
