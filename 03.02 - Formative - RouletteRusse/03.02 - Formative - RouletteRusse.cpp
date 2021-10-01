@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <vector>
 #include <cstdlib>
 #include <ctime>
@@ -17,24 +18,30 @@ void FillChamber()
 	}
 	*/
 }
-void Roulette() 
+void SpinCylinder() 
 {
-	std::cout << "roulette !" << std::endl;
+	std::cout << "Spin !" << std::endl;
 	std::vector<int>::iterator it = chamber.begin();
 	int temp;
+	//number of time the data scrollings happens
 	for (size_t i = 0; i < rand(); i++)
 	{
+		//scrollings data
 		for (auto it = chamber.begin(); it != chamber.end(); it++)
 		{
+			//get the first iterators value and store it in a "temp" variable
 			if (it == chamber.begin())
 			{
 				temp = *it;
 			}
-			
+			//if the iterators arrives to the last element 
+			//of the vector, puts the temp variable in it
 			if (it == chamber.end()-1)
 			{
 				*(chamber.end()-1) = temp;
 			}
+			//in anyother case, get the next iterators value 
+			//and store it in the current one
 			else
 			{
 				*it = *(it + 1);
@@ -42,7 +49,7 @@ void Roulette()
 		}
 	}
 }
-void Shoot() 
+void Trigger() 
 {
 	if (chamber[0] == 1) 
 	{
@@ -56,8 +63,31 @@ void Shoot()
 
 int main()
 {
+	int actionIndex;
+
+	std::cout << "Welcome to the roulette game ! \n";
+	std::cout << "Let's play !\n";
+
 	FillChamber();
-	Roulette();
-	Shoot();
+
+	do 
+	{
+		std::cout << "It is your turn to play !\n";
+		std::cout << "What do you want to do ?\n";
+		do
+		{
+			std::cin >> actionIndex;
+			switch (actionIndex)
+			{
+			case 0:
+				SpinCylinder();
+				break;
+			case 1:
+				Trigger();
+			default:
+				break;
+			}
+		} while (actionIndex != 1);
+	}
 }
 
