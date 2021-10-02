@@ -93,6 +93,7 @@ int main()
 		} while (actionIndex != 1);
 		std::cout << "It is the computers turn to play\n";
 		Trigger();
+		//Create a player / enemy turn situation
 	} while (exitChar != 'y');
 }
 
