@@ -9,7 +9,7 @@ std::vector<int> chamber(6);
 void FillChamber() 
 {
 	std::cout << "Bullet has been placed in a random chamber" << std::endl;
-	srand(time(0));
+	srand(time(NULL));
 	chamber[rand() % 6] = 1;
 	//Test
 	/*for (size_t i = 0; i < chamber.size(); i++)
@@ -53,29 +53,31 @@ void Trigger()
 {
 	if (chamber[0] == 1) 
 	{
-		std::cout << "Head Shot !";
+		std::cout << " got shot !";
 	}
 	else
 	{
-		std::cout << "Lucky !";
+		std::cout << " was lucky !";
 	}
 }
 
 int main()
 {
 	int actionIndex;
+	char exitChar = 'y';
 
 	std::cout << "Welcome to the roulette game ! \n";
 	std::cout << "Let's play !\n";
 
 	FillChamber();
 
-	do 
+	do
 	{
 		std::cout << "It is your turn to play !\n";
 		std::cout << "What do you want to do ?\n";
 		do
 		{
+			std::cin.ignore();
 			std::cin >> actionIndex;
 			switch (actionIndex)
 			{
@@ -84,10 +86,13 @@ int main()
 				break;
 			case 1:
 				Trigger();
+				break;
 			default:
 				break;
 			}
 		} while (actionIndex != 1);
-	}
+		std::cout << "It is the computers turn to play\n";
+		Trigger();
+	} while (exitChar != 'y');
 }
 

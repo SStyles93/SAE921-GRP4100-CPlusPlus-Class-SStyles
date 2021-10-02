@@ -37,5 +37,5 @@ TODO:
 		-03-Exercice [3.3]
 	Formative:
 		-03-Formative-PokerII
-		-03-Formative-RouletteRusse		
+		-03-Formative-RouletteRusse (TBC...)		
 		-03-Formative-Map [4.1]
