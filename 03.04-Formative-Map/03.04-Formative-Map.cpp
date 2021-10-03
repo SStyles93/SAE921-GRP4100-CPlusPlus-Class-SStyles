@@ -10,6 +10,14 @@ std::string concatNames;
 std::string phoneNumber;
 std::map<std::string, std::string> map;
 
+void ClearValues() 
+{
+	firstName.clear();
+	familyName.clear();
+	concatNames.clear();
+	phoneNumber.clear();
+}
+
 void AskForKeyValuePair() 
 {
 	while (exitChar != 'n' && exitChar != 'N')
@@ -25,10 +33,7 @@ void AskForKeyValuePair()
 		
 		map.emplace(concatNames, phoneNumber);
 
-		firstName.clear();
-		familyName.clear();
-		concatNames.clear();
-		phoneNumber.clear();
+		ClearValues();
 
 		std::cout << "Do you want to continue adding people to the list ? [n] to exit\n";
 		std::cin >> exitChar;

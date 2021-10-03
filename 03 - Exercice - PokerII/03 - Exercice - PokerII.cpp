@@ -1,6 +1,6 @@
 #include "Card.h"
 
-std::vector<Card> deck(52);
+std::vector<Card> deck;
 Card card;
 
 void DistributeCards(int nbCards_)
@@ -16,6 +16,10 @@ void DistributeCards(int nbCards_)
 
 int main()
 {
+	std::vector<Card> deck;
+	Card card;
+
+	
 	card.CreateDeck();
 	//Print Deck
 	card.PrintDeck();

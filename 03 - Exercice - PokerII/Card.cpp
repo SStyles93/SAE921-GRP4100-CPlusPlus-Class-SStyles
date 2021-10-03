@@ -1,13 +1,17 @@
 #include "Card.h"
 
+std::vector<Card> deck(52);
 
-struct Card
+
+
+
+class Card
 {
-public:
-	Value value;
-	Suit suit;
-
-	std::string GetCard(Value value_, Suit suit_)
+	public:
+		Value value;
+		Suit suit;
+	public:
+		std::string GetCard(Value value_, Suit suit_)
 	{
 		std::string cardValue;
 		std::string cardSuit;
@@ -78,35 +82,35 @@ public:
 
 		return cardValue + " OF " + cardSuit + "\n";
 	}	
-	void PrintDeck()
-	{
-		int deckCount = 0;
-		for (size_t suit = 0; suit < 4; ++suit)
+		void CreateDeck()
 		{
-			for (size_t val = 2; val < 14; ++val)
+			int deckCount = 0;
+			for (int suit{ 0 }; suit < 4; suit++)
 			{
-				//std::cout << deck2D[suit][val];
-				std::cout << GetCard(deck[deckCount].value, deck[deckCount].suit);
-				deckCount++;
-			}
-			std::cout << std::endl;
-		}
-	}
-	void CreateDeck()
-	{
-		int deckCount = 0;
-		for (int suit{ 0 }; suit < 4; suit++)
-		{
-			for (int val{ 2 }; val < 14; val++)
-			{
-				Card myCard;
+				for (int val{ 2 }; val < 14; val++)
+				{
+					Card myCard;
 
-				myCard.value = static_cast<Value>(val);
-				myCard.suit = static_cast<Suit>(suit);
-				//Add card to deck
-				deckCount++;
+					myCard.value = static_cast<Value>(val);
+					myCard.suit = static_cast<Suit>(suit);
+					//Add card to deck
+					deckCount++;
+				}
 			}
 		}
-	}
+		void PrintDeck()
+		{
+			int deckCount = 0;
+			for (size_t suit = 0; suit < 4; ++suit)
+			{
+				for (size_t val = 2; val < 14; ++val)
+				{
+					//std::cout << deck2D[suit][val];
+					std::cout << GetCard(deck[deckCount].value, deck[deckCount].suit);
+					deckCount++;
+				}
+				std::cout << std::endl;
+			}
+		}
 };
 
