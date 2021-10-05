@@ -1,13 +1,6 @@
 #include "Card.h"
 
-std::vector<Card> deck(52);
-
-class Card
-{
-public:
-	Value value;
-	Suit suit;
-	std::string GetCard(Value value_, Suit suit_)
+std::string Card::GetCard(Value value_, Suit suit_)
 	{
 		std::string cardValue;
 		std::string cardSuit;
@@ -78,7 +71,7 @@ public:
 
 		return cardValue + " OF " + cardSuit + "\n";
 	}
-	void CreateDeck()
+void Card::CreateDeck()
 	{
 		int deckCount = 0;
 		for (int suit{ 0 }; suit < 4; suit++)
@@ -94,18 +87,16 @@ public:
 			}
 		}
 	}
-	void PrintDeck()
+void Card::PrintDeck()
+{
+	int deckCount = 0;
+	for (size_t suit = 0; suit < 4; ++suit)
 	{
-		int deckCount = 0;
-		for (size_t suit = 0; suit < 4; ++suit)
+		for (size_t val = 2; val < 14; ++val)
 		{
-			for (size_t val = 2; val < 14; ++val)
-			{
-				//std::cout << deck2D[suit][val];
-				std::cout << GetCard(deck[deckCount].value, deck[deckCount].suit);
-				deckCount++;
-			}
-			std::cout << std::endl;
+			std::cout << GetCard(deck[deckCount].value, deck[deckCount].suit);
+			deckCount++;
 		}
+		std::cout << std::endl;
 	}
-};
+}

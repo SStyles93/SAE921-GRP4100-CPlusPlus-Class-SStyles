@@ -1,8 +1,7 @@
 #include "Card.h"
 
-std::vector<Card> deck;
 Card card;
-
+std::vector<Card> deck;
 void DistributeCards(int nbCards_)
 {
 	srand(time(0));
@@ -11,9 +10,6 @@ void DistributeCards(int nbCards_)
 		std::cout << card.GetCard(deck[(rand() % 52)].value, deck[(rand() % 52)].suit);
 	}
 }
-
-
-
 int main()
 {
 	std::vector<Card> deck;
