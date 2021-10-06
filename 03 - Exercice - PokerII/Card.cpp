@@ -71,32 +71,3 @@ std::string Card::GetCard(Value value_, Suit suit_)
 
 		return cardValue + " OF " + cardSuit + "\n";
 	}
-void Card::CreateDeck()
-	{
-		int deckCount = 0;
-		for (int suit{ 0 }; suit < 4; suit++)
-		{
-			for (int val{ 2 }; val < 14; val++)
-			{
-				Card myCard;
-
-				myCard.value = static_cast<Value>(val);
-				myCard.suit = static_cast<Suit>(suit);
-				//Add card to deck
-				deckCount++;
-			}
-		}
-	}
-void Card::PrintDeck()
-{
-	int deckCount = 0;
-	for (size_t suit = 0; suit < 4; ++suit)
-	{
-		for (size_t val = 2; val < 14; ++val)
-		{
-			std::cout << GetCard(deck[deckCount].value, deck[deckCount].suit);
-			deckCount++;
-		}
-		std::cout << std::endl;
-	}
-}
