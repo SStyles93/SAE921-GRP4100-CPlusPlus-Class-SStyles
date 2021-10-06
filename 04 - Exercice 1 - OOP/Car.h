@@ -4,11 +4,12 @@
 class Car 
 {
 private:
-	std::string brand;
-	std::string model;
-	std::string year;
+	std::string m_brand;
+	std::string m_model;
+	std::string m_year;
+	int m_power;
 public:
 	std::string GetCar();
-	void SetCar(std::string brand_, std::string model_, std::string year_);
+	void SetCar(std::string brand, std::string model, std::string year, int power);
 	void Print();
 };

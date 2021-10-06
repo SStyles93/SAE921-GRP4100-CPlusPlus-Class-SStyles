@@ -2,14 +2,14 @@
 
 std::string Car::GetCar() 
 {
-	return brand + " " + model + " " + year;
+	return m_brand + " " + m_model + " " + m_year + " " + std::to_string(m_power);
 }
-
-void Car::SetCar(std::string brand_, std::string model_, std::string year_)
+void Car::SetCar(std::string brand, std::string model, std::string year, int power)
 {
-	Car::brand = brand_;
-	Car::model = model_;
-	Car::year = year_;
+	Car::m_brand = brand;
+	Car::m_model = model;
+	Car::m_year = year;
+	Car::m_power = power;
 }
 void Car::Print() 
 {
