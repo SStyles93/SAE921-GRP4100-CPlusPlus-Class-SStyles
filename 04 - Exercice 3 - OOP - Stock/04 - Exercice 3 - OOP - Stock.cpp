@@ -16,8 +16,6 @@ int main()
 		collection.PopulateCollection(myObj);
 	}
 	collection.PrintCollection();
-	for (size_t i = 0; collection.Size(); i++) 
-	{
-
-	}
+	collection.DeleteMultiplesOf(3);
+	collection.PrintCollection();
 }

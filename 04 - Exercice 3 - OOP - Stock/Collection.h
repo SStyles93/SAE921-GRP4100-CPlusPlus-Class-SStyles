@@ -10,6 +10,7 @@ private:
 public:
 	int GetValue();
 	void SetValue(int value);
+	void DeleteValue();
 };
 class Collection 
 {
@@ -18,5 +19,5 @@ private:
 public:
 	void PopulateCollection(Object object);
 	void PrintCollection();
-	int Size();
+	void DeleteMultiplesOf(int nb);
 };
