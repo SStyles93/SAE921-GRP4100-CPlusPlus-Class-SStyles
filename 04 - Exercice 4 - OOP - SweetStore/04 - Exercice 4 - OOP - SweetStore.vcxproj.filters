@@ -18,5 +18,13 @@
     <ClCompile Include="04 - Exercice 4 - OOP - SweetStore.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SweetPack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SweetPack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
