@@ -13,5 +13,5 @@ void Car::SetCar(std::string brand, std::string model, std::string year, int pow
 }
 void Car::Print() 
 {
-	std::cout << brand << " " << model << " " << year << std::endl;
+	std::cout << m_brand << " " << m_model << " " << m_year << std::endl;
 }
