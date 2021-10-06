@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{c55cf21a-00e8-4d8d-9e65-7651f22bb106}</ProjectGuid>
-    <RootNamespace>My04Exercice1OOP</RootNamespace>
+    <ProjectGuid>{cf6fbe82-f658-4771-8201-576a1deee31a}</ProjectGuid>
+    <RootNamespace>My04Exercice2OOPPoint</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>04 - Exercice 1 - OOP - Car</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -140,11 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="04 - Exercice 1 - OOP - Car.cpp" />
-    <ClCompile Include="Car.cpp" />
+    <ClCompile Include="04 - Exercice 2 - OOP - Point.cpp" />
+    <ClCompile Include="Point.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Car.h" />
+    <ClInclude Include="Point.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
