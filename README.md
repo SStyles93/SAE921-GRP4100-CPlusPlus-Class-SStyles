@@ -22,7 +22,7 @@ DONE:
 		-01.02-Strings [1,2]
 		-02-Exercice [1.1, 1.2, 1.3]
 		-03-Exercice [2.1, 3.1, 3.2]
-		-04-Exercice [1,2,3,4]
+		-04-Exercice [1,2,3,4,5]
 		
 	Formative:
 		-01.02-Poker
@@ -40,7 +40,7 @@ TODO:
 		-01.02-Strings[3-16]
 		-02-Exercice[2.1, 2.2]
 		-03-Exercice [3.3]
-		-04-Exercice [5,6,7,8]
+		-04-Exercice [6,7,8]
 		
 	Formative:
 		-03-Formative-PokerII

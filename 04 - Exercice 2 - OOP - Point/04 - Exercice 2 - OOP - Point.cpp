@@ -16,5 +16,18 @@ int main()
 
 	point2.SetPoint(5.0, 5.0);
 	point2.PrintPoint();
+	//Ex5 - OOP - OperatorOverload
+	//Operator+ test
+	Point point3 = point1 + point2;
+	point3.PrintPoint();
+	//Operator >,< test
+	if (point2 > point1) 
+	{
+		std::cout << "is bigger" << std::endl;
+	}
+	if (point1 < point2) 
+	{
+		std::cout << "is smaller";
+	}
 
 }
