@@ -49,7 +49,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04 - Exercice 4 - OOP - Swe
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04 - Formative - OOP - SolarSystem", "04 - Formative - OOP - SolarSystem\04 - Formative - OOP - SolarSystem.vcxproj", "{BB415A19-6CD2-4B67-9955-C6E5A29C3DCB}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04 - Exercice 6 - OOP - Vehicules", "04 - Exercice 7 - OOP - Vehicules\04 - Exercice 7 - OOP - Vehicules.vcxproj", "{374B8EA2-3346-4D25-9CC5-EE72E1DB12EA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04 - Exercice 6 - OOP - Vehicules", "04 - Exercice 6 - OOP - Vehicules\04 - Exercice 6 - OOP - Vehicules.vcxproj", "{374B8EA2-3346-4D25-9CC5-EE72E1DB12EA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04 - Formative - OOP - Verger", "04 - Exercice - OOP - Verger\04 - Exercice - OOP - Verger.vcxproj", "{A4A2E879-DA8E-4E86-B8C1-F0F8E94A2598}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -219,6 +221,14 @@ Global
 		{374B8EA2-3346-4D25-9CC5-EE72E1DB12EA}.Release|x64.Build.0 = Release|x64
 		{374B8EA2-3346-4D25-9CC5-EE72E1DB12EA}.Release|x86.ActiveCfg = Release|Win32
 		{374B8EA2-3346-4D25-9CC5-EE72E1DB12EA}.Release|x86.Build.0 = Release|Win32
+		{A4A2E879-DA8E-4E86-B8C1-F0F8E94A2598}.Debug|x64.ActiveCfg = Debug|x64
+		{A4A2E879-DA8E-4E86-B8C1-F0F8E94A2598}.Debug|x64.Build.0 = Debug|x64
+		{A4A2E879-DA8E-4E86-B8C1-F0F8E94A2598}.Debug|x86.ActiveCfg = Debug|Win32
+		{A4A2E879-DA8E-4E86-B8C1-F0F8E94A2598}.Debug|x86.Build.0 = Debug|Win32
+		{A4A2E879-DA8E-4E86-B8C1-F0F8E94A2598}.Release|x64.ActiveCfg = Release|x64
+		{A4A2E879-DA8E-4E86-B8C1-F0F8E94A2598}.Release|x64.Build.0 = Release|x64
+		{A4A2E879-DA8E-4E86-B8C1-F0F8E94A2598}.Release|x86.ActiveCfg = Release|Win32
+		{A4A2E879-DA8E-4E86-B8C1-F0F8E94A2598}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -244,6 +254,7 @@ Global
 		{C33E4F14-F0C1-4848-A183-4406E682F221} = {D2CF255A-F478-4162-967A-F61E4FD4BB77}
 		{BB415A19-6CD2-4B67-9955-C6E5A29C3DCB} = {D2CF255A-F478-4162-967A-F61E4FD4BB77}
 		{374B8EA2-3346-4D25-9CC5-EE72E1DB12EA} = {D2CF255A-F478-4162-967A-F61E4FD4BB77}
+		{A4A2E879-DA8E-4E86-B8C1-F0F8E94A2598} = {D2CF255A-F478-4162-967A-F61E4FD4BB77}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7A4A7924-09C3-43AA-B8FA-C841DADC0EB1}

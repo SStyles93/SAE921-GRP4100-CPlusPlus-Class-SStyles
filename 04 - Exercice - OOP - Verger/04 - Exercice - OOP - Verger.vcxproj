@@ -24,6 +24,7 @@
     <ProjectGuid>{a4a2e879-da8e-4e86-b8c1-f0f8e94a2598}</ProjectGuid>
     <RootNamespace>My04ExerciceOOPVerger</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>04 - Formative - OOP - Verger</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -139,7 +140,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="04 - Exercice - OOP - Verger.cpp" />
+    <ClCompile Include="04 - Formative - OOP - Verger.cpp" />
+    <ClCompile Include="AppleTree.cpp" />
+    <ClCompile Include="CheryTree.cpp" />
+    <ClCompile Include="PearTree.cpp" />
+    <ClCompile Include="Tree.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AppleTree.h" />
+    <ClInclude Include="CheryTree.h" />
+    <ClInclude Include="PearTree.h" />
+    <ClInclude Include="Tree.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
