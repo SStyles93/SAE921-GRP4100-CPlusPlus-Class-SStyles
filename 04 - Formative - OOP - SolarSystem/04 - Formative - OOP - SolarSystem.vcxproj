@@ -140,6 +140,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="04 - Formative - OOP - SolarSystem.cpp" />
+    <ClCompile Include="AstroObject.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AsrtoObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
