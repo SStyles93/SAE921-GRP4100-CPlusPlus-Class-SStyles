@@ -5,11 +5,11 @@
 class Tree
 {
 protected:
-	// grams
-	int m_weight;
-	int m_quantity;
+	int m_quantity = 0;
+	int m_fruitsWeight = 0;
 public:
 	Tree();
 	virtual void InitFruits(); //in kilos
+	void PrintWeight();
 };
 

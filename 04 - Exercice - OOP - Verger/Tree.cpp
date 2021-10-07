@@ -1,12 +1,11 @@
 #include "Tree.h"
 
-Tree::Tree() 
+Tree::Tree()
 {
 	m_quantity = 0;
-	m_weight = 0;
 };
-void Tree::InitFruits() 
+void Tree::InitFruits() {};
+void Tree::PrintWeight()
 {
-	int totalWeight = (m_weight * m_quantity)/1000;
-	std::cout << "There is : " << totalWeight << " kg on the Tree";
+	std::cout << "There is " << m_fruitsWeight << " kg" << std::endl;
 }
