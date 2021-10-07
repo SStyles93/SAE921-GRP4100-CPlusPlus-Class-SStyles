@@ -15,6 +15,11 @@ void SweetPack::SellSweet(int quantity)
 	{
 		std::cout << "There are not enought sweets" << std::endl;
 	}
+	else if (quantity < 0) 
+	{
+		quantity *= -1;
+		m_quantity -= quantity;
+	}
 	else
 	{
 		m_quantity -= quantity;

@@ -15,7 +15,7 @@ int main()
 	}
 
 	store[static_cast<int>(SweetPack::SweetType::Lolipop)].SellSweet(2);
-	store[static_cast<int>(SweetPack::SweetType::Tagada)].SellSweet(1);
+	store[static_cast<int>(SweetPack::SweetType::Tagada)].SellSweet(-3);
 	store[static_cast<int>(SweetPack::SweetType::Bubblegum)].SellSweet(3);
 
 	for (size_t i = 0; i < store.size(); i++)
