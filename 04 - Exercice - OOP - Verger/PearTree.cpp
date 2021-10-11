@@ -1,11 +1,15 @@
 #include "PearTree.h"
 
-PearTree::PearTree(int quantity) 
+PearTree::PearTree() 
 {
-	m_fruitsWeight = (quantity * m_pearWeight) / 1000;
 }
 
-void PearTree::InitFruits()
+void PearTree::GetWeight()
 {
+	m_fruitsWeight = (m_quantity * m_pearWeight) / 1000;
+}
 
+void PearTree::SetQuantity(time_t time)
+{
+	m_quantity = (250 + time % 350);
 }

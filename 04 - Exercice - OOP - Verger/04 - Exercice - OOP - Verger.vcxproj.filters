@@ -27,7 +27,7 @@
     <ClCompile Include="PearTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CheryTree.cpp">
+    <ClCompile Include="CherryTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,7 +41,7 @@
     <ClInclude Include="PearTree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CheryTree.h">
+    <ClInclude Include="CherryTree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

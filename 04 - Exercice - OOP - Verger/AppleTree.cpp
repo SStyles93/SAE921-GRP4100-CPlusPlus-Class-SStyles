@@ -1,10 +1,15 @@
 #include "AppleTree.h"
 
-AppleTree::AppleTree(int quantity) 
+AppleTree::AppleTree() 
 {
-	m_fruitsWeight = (quantity * m_appleWeight) / 1000;
 }
 
-void AppleTree::InitFruits()
+void AppleTree::GetWeight()
 {
+	m_fruitsWeight = (m_quantity * m_appleWeight) / 1000;
+}
+
+void AppleTree::SetQuantity(time_t time)
+{
+	m_quantity = (650 + time % 850);
 }

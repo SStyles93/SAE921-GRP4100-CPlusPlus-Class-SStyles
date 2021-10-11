@@ -142,13 +142,13 @@
   <ItemGroup>
     <ClCompile Include="04 - Formative - OOP - Verger.cpp" />
     <ClCompile Include="AppleTree.cpp" />
-    <ClCompile Include="CheryTree.cpp" />
+    <ClCompile Include="CherryTree.cpp" />
     <ClCompile Include="PearTree.cpp" />
     <ClCompile Include="Tree.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AppleTree.h" />
-    <ClInclude Include="CheryTree.h" />
+    <ClInclude Include="CherryTree.h" />
     <ClInclude Include="PearTree.h" />
     <ClInclude Include="Tree.h" />
   </ItemGroup>

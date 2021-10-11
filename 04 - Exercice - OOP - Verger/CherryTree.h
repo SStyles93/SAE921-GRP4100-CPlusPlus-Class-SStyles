@@ -7,7 +7,8 @@ protected:
 	//weight in grams
 	int m_cherryWeight = 5;
 public:
-	CherryTree(int quantity);
-	void InitFruits() override;
+	CherryTree();
+	void GetWeight() override;
+	void SetQuantity(time_t time) override;
 };
 

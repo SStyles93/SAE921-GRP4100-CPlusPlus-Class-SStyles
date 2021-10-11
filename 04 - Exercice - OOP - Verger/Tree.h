@@ -1,4 +1,6 @@
 #pragma once
+#include <cstdlib>
+#include <ctime>
 #include <vector>
 #include <iostream>
 
@@ -9,7 +11,9 @@ protected:
 	int m_fruitsWeight = 0;
 public:
 	Tree();
-	virtual void InitFruits(); //in kilos
+	virtual void GetWeight(); //in kilos
 	void PrintWeight();
+	int GetQuantity();
+	virtual void SetQuantity(time_t time);
 };
 
