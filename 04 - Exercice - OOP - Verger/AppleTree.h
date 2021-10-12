@@ -8,7 +8,7 @@ protected:
 	int m_appleWeight = 150;
 public:
 	AppleTree();
-	void GetWeight() override;
+	int GetWeight() override;
 	void SetQuantity(time_t time) override;
 };
 

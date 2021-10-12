@@ -3,9 +3,9 @@
 CherryTree::CherryTree()
 {
 }
-void CherryTree::GetWeight() 
+int CherryTree::GetWeight()
 {
-	m_fruitsWeight = (m_quantity * m_cherryWeight) / 1000;
+	return m_fruitsWeight = (m_quantity * m_cherryWeight) / 1000;
 };
 void CherryTree::SetQuantity(time_t time) 
 {

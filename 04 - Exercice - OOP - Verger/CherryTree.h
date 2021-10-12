@@ -8,7 +8,7 @@ protected:
 	int m_cherryWeight = 5;
 public:
 	CherryTree();
-	void GetWeight() override;
+	int GetWeight() override;
 	void SetQuantity(time_t time) override;
 };
 

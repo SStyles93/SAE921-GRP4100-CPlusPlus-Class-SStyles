@@ -4,9 +4,9 @@ PearTree::PearTree()
 {
 }
 
-void PearTree::GetWeight()
+int PearTree::GetWeight()
 {
-	m_fruitsWeight = (m_quantity * m_pearWeight) / 1000;
+	return m_fruitsWeight = (m_quantity * m_pearWeight) / 1000;
 }
 
 void PearTree::SetQuantity(time_t time)

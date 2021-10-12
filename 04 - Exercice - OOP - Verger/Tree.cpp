@@ -5,7 +5,10 @@ Tree::Tree()
 	m_quantity = 0;
 	m_fruitsWeight = 0;
 };
-void Tree::GetWeight() {};
+int Tree::GetWeight()
+{
+	return m_fruitsWeight = (m_quantity * m_fruitsWeight) / 1000;
+}
 void Tree::PrintWeight()
 {
 	std::cout << "There is " << m_fruitsWeight << " kg" << std::endl;

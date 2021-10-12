@@ -4,9 +4,9 @@ AppleTree::AppleTree()
 {
 }
 
-void AppleTree::GetWeight()
+int AppleTree::GetWeight()
 {
-	m_fruitsWeight = (m_quantity * m_appleWeight) / 1000;
+	return m_fruitsWeight = (m_quantity * m_appleWeight) / 1000;
 }
 
 void AppleTree::SetQuantity(time_t time)

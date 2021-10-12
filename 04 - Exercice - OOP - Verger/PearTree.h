@@ -8,7 +8,7 @@ protected:
 	int m_pearWeight = 90;
 public:
 	PearTree();
-	void GetWeight() override;
+	int GetWeight() override;
 	void SetQuantity(time_t time) override;
 };
 
