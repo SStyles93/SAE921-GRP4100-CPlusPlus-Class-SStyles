@@ -18,7 +18,7 @@ void InitTrees()
 	for (size_t i = 0; i < trees.size(); i++)
 	{
 		srand(time(NULL));
-		trees[i]->SetQuantity(rand() * i);
+		trees[i]->SetQuantity(rand()*i);
 		trees[i]->GetWeight();
 		//trees[i]->PrintWeight();
 	}
@@ -65,7 +65,7 @@ int main()
 
 	if (contractSuccess == true) 
 	{
-		std::cout << "You have managed to fullfill your contract! " << std::endl;
+		std::cout << "You have fulfilled your contract! " << std::endl;
 	}
 	else 
 	{
