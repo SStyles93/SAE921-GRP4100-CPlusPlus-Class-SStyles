@@ -17,7 +17,7 @@ void InitTrees()
 	//Init trees
 	for (size_t i = 0; i < trees.size(); i++)
 	{
-		srand(time(NULL));
+		srand(time(nullptr));
 		trees[i]->SetQuantity(rand()*i);
 		trees[i]->GetWeight();
 		//trees[i]->PrintWeight();
