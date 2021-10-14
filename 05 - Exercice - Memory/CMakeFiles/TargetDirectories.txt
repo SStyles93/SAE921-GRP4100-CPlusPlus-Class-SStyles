@@ -1,0 +1,8 @@
+C:/SAE/SAE921-GRP4100-CPlusPlus-Class-SStyles/05 - Exercice - Memory/CMakeFiles/animal.dir
+C:/SAE/SAE921-GRP4100-CPlusPlus-Class-SStyles/05 - Exercice - Memory/CMakeFiles/count.dir
+C:/SAE/SAE921-GRP4100-CPlusPlus-Class-SStyles/05 - Exercice - Memory/CMakeFiles/factorial.dir
+C:/SAE/SAE921-GRP4100-CPlusPlus-Class-SStyles/05 - Exercice - Memory/CMakeFiles/list.dir
+C:/SAE/SAE921-GRP4100-CPlusPlus-Class-SStyles/05 - Exercice - Memory/CMakeFiles/palindrome.dir
+C:/SAE/SAE921-GRP4100-CPlusPlus-Class-SStyles/05 - Exercice - Memory/CMakeFiles/swap.dir
+C:/SAE/SAE921-GRP4100-CPlusPlus-Class-SStyles/05 - Exercice - Memory/CMakeFiles/ALL_BUILD.dir
+C:/SAE/SAE921-GRP4100-CPlusPlus-Class-SStyles/05 - Exercice - Memory/CMakeFiles/ZERO_CHECK.dir
