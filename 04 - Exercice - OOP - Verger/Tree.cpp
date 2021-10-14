@@ -9,6 +9,10 @@ int Tree::GetWeight()
 {
 	return m_fruitsWeight = (m_quantity * m_fruitsWeight) / 1000;
 }
+void Tree::SetWeight(int weight)
+{
+	m_fruitsWeight = weight;
+}
 void Tree::PrintWeight()
 {
 	std::cout << "There is " << m_fruitsWeight << " kg" << std::endl;
@@ -20,5 +24,6 @@ int Tree::GetQuantity()
 }
 void Tree::SetQuantity(time_t time) 
 {
-	m_quantity = time;
+	m_quantity = static_cast<int>(time);
 }
+

@@ -53,6 +53,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04 - Exercice 6 - OOP - Veh
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04 - Formative - OOP - Verger", "04 - Exercice - OOP - Verger\04 - Exercice - OOP - Verger.vcxproj", "{A4A2E879-DA8E-4E86-B8C1-F0F8E94A2598}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04 - Exercice 9 - OOP - Inventory", "04 - Exercice 9 - OOP - Inventory\04 - Exercice 9 - OOP - Inventory.vcxproj", "{3C1606F4-2C60-4611-AB4C-A357585080C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -229,6 +231,14 @@ Global
 		{A4A2E879-DA8E-4E86-B8C1-F0F8E94A2598}.Release|x64.Build.0 = Release|x64
 		{A4A2E879-DA8E-4E86-B8C1-F0F8E94A2598}.Release|x86.ActiveCfg = Release|Win32
 		{A4A2E879-DA8E-4E86-B8C1-F0F8E94A2598}.Release|x86.Build.0 = Release|Win32
+		{3C1606F4-2C60-4611-AB4C-A357585080C4}.Debug|x64.ActiveCfg = Debug|x64
+		{3C1606F4-2C60-4611-AB4C-A357585080C4}.Debug|x64.Build.0 = Debug|x64
+		{3C1606F4-2C60-4611-AB4C-A357585080C4}.Debug|x86.ActiveCfg = Debug|Win32
+		{3C1606F4-2C60-4611-AB4C-A357585080C4}.Debug|x86.Build.0 = Debug|Win32
+		{3C1606F4-2C60-4611-AB4C-A357585080C4}.Release|x64.ActiveCfg = Release|x64
+		{3C1606F4-2C60-4611-AB4C-A357585080C4}.Release|x64.Build.0 = Release|x64
+		{3C1606F4-2C60-4611-AB4C-A357585080C4}.Release|x86.ActiveCfg = Release|Win32
+		{3C1606F4-2C60-4611-AB4C-A357585080C4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

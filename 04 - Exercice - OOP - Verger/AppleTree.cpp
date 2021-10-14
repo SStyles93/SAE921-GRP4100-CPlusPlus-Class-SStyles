@@ -11,5 +11,5 @@ int AppleTree::GetWeight()
 
 void AppleTree::SetQuantity(time_t time)
 {
-	m_quantity = (650 + time % 850);
+	m_quantity = static_cast<int>(650 + time % 250);
 }

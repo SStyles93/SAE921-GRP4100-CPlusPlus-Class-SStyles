@@ -12,6 +12,7 @@ protected:
 public:
 	Tree();
 	virtual int GetWeight(); //in kilos
+	void SetWeight(int weight);
 	void PrintWeight();
 	int GetQuantity();
 	virtual void SetQuantity(time_t time);

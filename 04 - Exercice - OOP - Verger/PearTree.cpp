@@ -11,5 +11,5 @@ int PearTree::GetWeight()
 
 void PearTree::SetQuantity(time_t time)
 {
-	m_quantity = (250 + time % 350);
+	m_quantity = static_cast<int>(250 + time % 100);
 }

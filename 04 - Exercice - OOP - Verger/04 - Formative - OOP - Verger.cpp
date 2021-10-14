@@ -4,10 +4,11 @@
 
 std::vector<Tree*> trees;
 
-int appleTreesNumber = 10;
-int cherryTreesNumber = 5;
-int pearTreesNumber = 5 ;
+int appleTreesNumber = 1;
+int cherryTreesNumber = 1;
+int pearTreesNumber = 1 ;
 
+int weightToGet = 2000;
 int sum;
 int numberOfCollections;
 bool contractSuccess = true;
@@ -49,17 +50,30 @@ int main()
 		trees.push_back(new PearTree());
 	}
 
+		InitTrees();
 	do 
 	{
 		numberOfCollections++;
-		InitTrees();
-		SumTrees();
-		sum -= 2000;
-		std::cout << sum << std::endl;
-		if (sum <= 0) 
+		//harvest
+		for (int i = 0; i < trees.size(); i++)
+		{
+			weightToGet -= trees[i]->GetWeight();
+			sum += trees[i]->GetWeight();
+			trees[i]->SetWeight(0);
+			std::cout << weightToGet << " | " << sum << " | " << trees[i]->GetWeight() << std::endl;
+			//TODO : Weight does not update correctly
+		}
+
+		if (weightToGet <= 0)
+		{
+			contractSuccess = true;
+			break;
+		}
+		else
 		{
 			contractSuccess = false;
 		}
+
 
 	} while (numberOfCollections != 10);
 
