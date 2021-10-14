@@ -55,6 +55,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04 - Formative - OOP - Verg
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04 - Exercice 9 - OOP - Inventory", "04 - Exercice 9 - OOP - Inventory\04 - Exercice 9 - OOP - Inventory.vcxproj", "{3C1606F4-2C60-4611-AB4C-A357585080C4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05", "05", "{160E12B8-E7C3-4868-B55D-42946FE3AAD7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
