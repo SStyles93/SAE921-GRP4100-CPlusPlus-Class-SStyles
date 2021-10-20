@@ -23,6 +23,7 @@ DONE:
 		-02-Exercice [1.1, 1.2, 1.3]
 		-03-Exercice [2.1, 3.1, 3.2]
 		-04-Exercice [1,2,3,4,5,7,9]
+		-06-Exercice [1,2,3,4,5]
 		
 	Formative:
 		-01.02-Poker

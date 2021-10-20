@@ -55,15 +55,15 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04 - Formative - OOP - Verg
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04 - Exercice 9 - OOP - Inventory", "04 - Exercice 9 - OOP - Inventory\04 - Exercice 9 - OOP - Inventory.vcxproj", "{3C1606F4-2C60-4611-AB4C-A357585080C4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05", "05", "{160E12B8-E7C3-4868-B55D-42946FE3AAD7}"
-	ProjectSection(SolutionItems) = preProject
-		05 - Exercice - Memory\exercice-pointeur-SStyles93\src\animal.cpp = 05 - Exercice - Memory\exercice-pointeur-SStyles93\src\animal.cpp
-		05 - Exercice - Memory\exercice-pointeur-SStyles93\src\count.cpp = 05 - Exercice - Memory\exercice-pointeur-SStyles93\src\count.cpp
-		05 - Exercice - Memory\exercice-pointeur-SStyles93\src\factorial.cpp = 05 - Exercice - Memory\exercice-pointeur-SStyles93\src\factorial.cpp
-		05 - Exercice - Memory\exercice-pointeur-SStyles93\src\list.cpp = 05 - Exercice - Memory\exercice-pointeur-SStyles93\src\list.cpp
-		05 - Exercice - Memory\exercice-pointeur-SStyles93\src\palindrome.cpp = 05 - Exercice - Memory\exercice-pointeur-SStyles93\src\palindrome.cpp
-		05 - Exercice - Memory\exercice-pointeur-SStyles93\src\swap.cpp = 05 - Exercice - Memory\exercice-pointeur-SStyles93\src\swap.cpp
-	EndProjectSection
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06", "06", "{7C1D6E51-0C13-4CC0-9487-E9B6ED8456F0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "06 - Exercice 2 - ProgramStructure", "05 - Exercice 1 - ProgramStructure\05 - Exercice 1 - ProgramStructure.vcxproj", "{6B073C86-3726-4D10-A1F4-0567A0E59BCA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "06 - Exercice 3 - ProgramStructure", "05 - Exercice 2 - ProgramStructure\05 - Exercice 2 - ProgramStructure.vcxproj", "{9D492317-F67D-4BE6-8D00-C8EA1C263531}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "06 - Exercice 4 - ProgramStructure", "05 - Exercice 4 - ProgramStructure\05 - Exercice 4 - ProgramStructure.vcxproj", "{8CE11B55-4EA1-45EB-8E9E-2400447757FC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "06 - Exercice 5 - ProgramStructure", "06 - Exercice 5 - ProgramStructure\06 - Exercice 5 - ProgramStructure.vcxproj", "{5B9DFB06-89C5-4782-A633-806965119322}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -249,6 +249,38 @@ Global
 		{3C1606F4-2C60-4611-AB4C-A357585080C4}.Release|x64.Build.0 = Release|x64
 		{3C1606F4-2C60-4611-AB4C-A357585080C4}.Release|x86.ActiveCfg = Release|Win32
 		{3C1606F4-2C60-4611-AB4C-A357585080C4}.Release|x86.Build.0 = Release|Win32
+		{6B073C86-3726-4D10-A1F4-0567A0E59BCA}.Debug|x64.ActiveCfg = Debug|x64
+		{6B073C86-3726-4D10-A1F4-0567A0E59BCA}.Debug|x64.Build.0 = Debug|x64
+		{6B073C86-3726-4D10-A1F4-0567A0E59BCA}.Debug|x86.ActiveCfg = Debug|Win32
+		{6B073C86-3726-4D10-A1F4-0567A0E59BCA}.Debug|x86.Build.0 = Debug|Win32
+		{6B073C86-3726-4D10-A1F4-0567A0E59BCA}.Release|x64.ActiveCfg = Release|x64
+		{6B073C86-3726-4D10-A1F4-0567A0E59BCA}.Release|x64.Build.0 = Release|x64
+		{6B073C86-3726-4D10-A1F4-0567A0E59BCA}.Release|x86.ActiveCfg = Release|Win32
+		{6B073C86-3726-4D10-A1F4-0567A0E59BCA}.Release|x86.Build.0 = Release|Win32
+		{9D492317-F67D-4BE6-8D00-C8EA1C263531}.Debug|x64.ActiveCfg = Debug|x64
+		{9D492317-F67D-4BE6-8D00-C8EA1C263531}.Debug|x64.Build.0 = Debug|x64
+		{9D492317-F67D-4BE6-8D00-C8EA1C263531}.Debug|x86.ActiveCfg = Debug|Win32
+		{9D492317-F67D-4BE6-8D00-C8EA1C263531}.Debug|x86.Build.0 = Debug|Win32
+		{9D492317-F67D-4BE6-8D00-C8EA1C263531}.Release|x64.ActiveCfg = Release|x64
+		{9D492317-F67D-4BE6-8D00-C8EA1C263531}.Release|x64.Build.0 = Release|x64
+		{9D492317-F67D-4BE6-8D00-C8EA1C263531}.Release|x86.ActiveCfg = Release|Win32
+		{9D492317-F67D-4BE6-8D00-C8EA1C263531}.Release|x86.Build.0 = Release|Win32
+		{8CE11B55-4EA1-45EB-8E9E-2400447757FC}.Debug|x64.ActiveCfg = Debug|x64
+		{8CE11B55-4EA1-45EB-8E9E-2400447757FC}.Debug|x64.Build.0 = Debug|x64
+		{8CE11B55-4EA1-45EB-8E9E-2400447757FC}.Debug|x86.ActiveCfg = Debug|Win32
+		{8CE11B55-4EA1-45EB-8E9E-2400447757FC}.Debug|x86.Build.0 = Debug|Win32
+		{8CE11B55-4EA1-45EB-8E9E-2400447757FC}.Release|x64.ActiveCfg = Release|x64
+		{8CE11B55-4EA1-45EB-8E9E-2400447757FC}.Release|x64.Build.0 = Release|x64
+		{8CE11B55-4EA1-45EB-8E9E-2400447757FC}.Release|x86.ActiveCfg = Release|Win32
+		{8CE11B55-4EA1-45EB-8E9E-2400447757FC}.Release|x86.Build.0 = Release|Win32
+		{5B9DFB06-89C5-4782-A633-806965119322}.Debug|x64.ActiveCfg = Debug|x64
+		{5B9DFB06-89C5-4782-A633-806965119322}.Debug|x64.Build.0 = Debug|x64
+		{5B9DFB06-89C5-4782-A633-806965119322}.Debug|x86.ActiveCfg = Debug|Win32
+		{5B9DFB06-89C5-4782-A633-806965119322}.Debug|x86.Build.0 = Debug|Win32
+		{5B9DFB06-89C5-4782-A633-806965119322}.Release|x64.ActiveCfg = Release|x64
+		{5B9DFB06-89C5-4782-A633-806965119322}.Release|x64.Build.0 = Release|x64
+		{5B9DFB06-89C5-4782-A633-806965119322}.Release|x86.ActiveCfg = Release|Win32
+		{5B9DFB06-89C5-4782-A633-806965119322}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -276,6 +308,10 @@ Global
 		{374B8EA2-3346-4D25-9CC5-EE72E1DB12EA} = {D2CF255A-F478-4162-967A-F61E4FD4BB77}
 		{A4A2E879-DA8E-4E86-B8C1-F0F8E94A2598} = {D2CF255A-F478-4162-967A-F61E4FD4BB77}
 		{3C1606F4-2C60-4611-AB4C-A357585080C4} = {D2CF255A-F478-4162-967A-F61E4FD4BB77}
+		{6B073C86-3726-4D10-A1F4-0567A0E59BCA} = {7C1D6E51-0C13-4CC0-9487-E9B6ED8456F0}
+		{9D492317-F67D-4BE6-8D00-C8EA1C263531} = {7C1D6E51-0C13-4CC0-9487-E9B6ED8456F0}
+		{8CE11B55-4EA1-45EB-8E9E-2400447757FC} = {7C1D6E51-0C13-4CC0-9487-E9B6ED8456F0}
+		{5B9DFB06-89C5-4782-A633-806965119322} = {7C1D6E51-0C13-4CC0-9487-E9B6ED8456F0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7A4A7924-09C3-43AA-B8FA-C841DADC0EB1}
