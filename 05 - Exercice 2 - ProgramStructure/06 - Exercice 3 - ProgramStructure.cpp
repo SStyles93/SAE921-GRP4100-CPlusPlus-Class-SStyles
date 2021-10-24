@@ -13,7 +13,7 @@ public:
     // This method adds a number into the vector then calls the mysterious function
     void add(int numbertoAdd)
     {
-        numbers.emplace_back(numbertoAdd);
+        numbers.emplace_back(&numbertoAdd);
         callback(numbers.back());
     }
 
