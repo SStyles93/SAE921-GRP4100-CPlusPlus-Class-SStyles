@@ -1,3 +1,4 @@
-Analyse comparative, quels sont les éléments techniques
+Analyse comparative:
+Quels sont les éléments techniques
 permettant la différenciation de genre entre un jeu "hyper-casual" 
-comme Flappybird et un jeu "casual" comme BrawlStars.
+tel que Flappybird et un jeu "casual" tel que BrawlStars.
